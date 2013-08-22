@@ -88,17 +88,15 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-   // int row = indexPath.row;
-   // UITableViewCell *selectedCell = [tableView cellForRowAtIndexPath:indexPath];
-   // NSString *cellText = selectedCell.textLabel.text;
+   
     
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     PaymentFlow *pf = [[PaymentFlow alloc] init];
     pf.title = _itemsArray[indexPath.row];
+    
 
-    //vc.sizes = @[@"Small", @"Medium", @"Large", @"Extra Large"];
     [self.navigationController pushViewController:pf animated:YES];
 
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:nil action:nil];

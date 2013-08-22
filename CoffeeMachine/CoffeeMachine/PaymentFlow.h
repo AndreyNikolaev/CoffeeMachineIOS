@@ -8,12 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+@class CoffeeMachineState;
+@class Drink;
+
 int sum;
 NSString *result;
-@interface PaymentFlow : UIViewController
-@property (strong, nonatomic) IBOutlet UILabel *chosenItemLabel;
-@property (strong, nonatomic) IBOutlet UIButton *cancelBtn;
-- (IBAction)switchBack:(id)sender;
+
+@interface PaymentFlow : UIViewController 
+
+@property (strong) CoffeeMachineState *coffeeMachineState;
+@property (strong) Drink *selectedDrink;
+
+
 @property (strong, nonatomic) IBOutlet UIButton *fiveBtn;
 @property (strong, nonatomic) IBOutlet UILabel *sumLbl;
 @property (strong, nonatomic) IBOutlet UIButton *tenBtn;
