@@ -77,9 +77,7 @@
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "15"
-         endingLineNumber = "15"
-         landmarkName = "coffeeMachineState"
-         landmarkType = "19">
+         endingLineNumber = "15">
       </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>
