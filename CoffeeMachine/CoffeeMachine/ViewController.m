@@ -11,6 +11,7 @@
 #import "Drink.h"
 #import "DrinksContainer.h"
 #import "CoffeeMachineState.h"
+#import "MoneyAmount.h"
 
 
 @interface ViewController ()
@@ -37,8 +38,11 @@
     
     DrinksContainer *drinks =[[ DrinksContainer alloc]init ];
     drinks.setSomeDrinks;
+    MoneyAmount *moneyAmount = [[MoneyAmount alloc]init];
+    moneyAmount.setSomeCoins;
     _coffeeMachineState=[[CoffeeMachineState alloc]init];
     [_coffeeMachineState setCurrentDrinksAmount:drinks];
+    _coffeeMachineState.coins = moneyAmount;
     
   
     _itemsArray=[[NSMutableArray alloc]initWithArray:[[_coffeeMachineState getCurrentDrinks] getStringDrinks]];
@@ -52,11 +56,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-//- (IBAction)switchView:(id)sender {
-   // PaymentFlow *pf = [[PaymentFlow alloc] initWithNibName:@"PaymentFlow" bundle:nil];
-    //[self presentViewController:pf animated:YES completion:nil];
-    
-//}
 
 #pragma mark -
 #pragma mark === UITableView data source & delegate ===
@@ -78,7 +77,12 @@
             cell.textLabel.text=current;
         }
     }
+<<<<<<< HEAD
+    
+   
+=======
   
+>>>>>>> bf03fa33debedc9f947b075c98888a1521659059
     return cell;
 }
 
@@ -92,8 +96,13 @@
     
     PaymentFlow *paymentFlow = [[PaymentFlow alloc] init];
     paymentFlow.coffeeMachineState=_coffeeMachineState;
+<<<<<<< HEAD
+    
+    paymentFlow.title = _itemsArray[indexPath.row];
+=======
    
     
+>>>>>>> bf03fa33debedc9f947b075c98888a1521659059
 
     [self.navigationController pushViewController:paymentFlow animated:YES];
 

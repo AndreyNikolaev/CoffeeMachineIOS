@@ -25,5 +25,19 @@
 {
     return [NSString stringWithFormat:@"%d", self.value];
 }
+- (id)copy
+{
+    Coin *coin  = [[Coin alloc] init];
+    coin.value = self.value;
+    coin.coinValue = self.coinValue;
+    
+    return coin;
+}
+
+- (id)copyWithZone:(NSZone *)zone
+{
+    return [self copy];
+}
+
 
 @end
