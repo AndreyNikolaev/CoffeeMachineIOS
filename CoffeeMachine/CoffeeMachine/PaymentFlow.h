@@ -26,7 +26,6 @@ NSString *result;
 @property (strong, nonatomic) IBOutlet UIButton *twentyBtn;
 @property (strong, nonatomic) IBOutlet UIButton *fiftyBtn;
 @property (strong, nonatomic) IBOutlet UIButton *levBtn;
-@property (strong, nonatomic) IBOutlet UINavigationBar *navBar;
 
 - (IBAction)sumFive:(id)sender;
 - (IBAction)sumTen:(id)sender;
