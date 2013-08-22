@@ -19,7 +19,6 @@
 @end
 
 @implementation PaymentFlow
-@synthesize chosenItemLabel;
 @synthesize sumLbl;
 @synthesize fiveBtn;
 @synthesize tenBtn;
