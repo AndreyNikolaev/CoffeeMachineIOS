@@ -12,13 +12,13 @@
 @implementation CoffeeMachineState
 @synthesize currentDrinksAmount;
 @synthesize initialDrinksAmount;
-@synthesize coins;
+@synthesize coins=_coins;
 
 -(id)init:(MoneyAmount*) newCoins : (DrinksContainer*) newDrinks
 {
     self = [super init];
     if (self) {
-        coins=newCoins;
+        _coins=newCoins;
         currentDrinksAmount=newDrinks;
         initialDrinksAmount=[[DrinksContainer alloc]init ];
         NSMutableArray* currentDrinks=[[NSMutableArray alloc]initWithArray:[currentDrinksAmount getDrinks]];
@@ -30,10 +30,7 @@
     }
     return self;
 }
--(MoneyAmount*)getCoins
-{
-    return coins;
-}
+
 -(DrinksContainer*)getCurrentDrinks
 {
     return currentDrinksAmount;
