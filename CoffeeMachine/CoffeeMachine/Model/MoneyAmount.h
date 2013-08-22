@@ -12,18 +12,19 @@
 @class Withdraw;
 
 @interface MoneyAmount : NSObject<NSCopying>
-@property NSMutableDictionary * coins;
--(id)init;
--(NSMutableDictionary *)getCoins;
+
+@property(strong)NSMutableDictionary *coins ;
+
+
 -(MoneyAmount *)add:(Coin*) c : (int) count;
 -(MoneyAmount *)add:(MoneyAmount*)mAmount;
 -(Withdraw *)withdraw:(int)amount;
 -(NSMutableArray *)getSortedCoinTypes;
 -(void)getCoins:(Coin *)c : (int)count;
--(int)getCoin:(Coin *)c;
--(NSString *)toString;
+-(NSString *)description;
 -(int)sumOfCoins;
--(NSUInteger*)hashCode;
--(BOOL)equals:(id)obj;
+- (void)addCoin:(Coin *)coin amount:(NSUInteger)amount;
+//-(NSUInteger*)hashCode;
+//-(BOOL)equals:(id)obj;
 
 @end

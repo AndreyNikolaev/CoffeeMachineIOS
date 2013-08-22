@@ -57,11 +57,11 @@
     for (Drink *storedDrink in [self.drinks allKeys]) {
         [stringOfDrinksArray addObject:[NSString stringWithFormat:@"%@  price: %lu",storedDrink.name,(unsigned long)storedDrink.price]];
     }
-
+    
     return stringOfDrinksArray;
 }
 
--(void)setSomeDrinks 
+-(void)setSomeDrinks
 {
     Drink* drink1;
     Drink* drink2;
@@ -92,9 +92,9 @@
             break;
         }
     }
-
     
-        return quantity;
+    
+    return quantity;
 }
 
 -(void)decreaseDrinkAmount:(Drink *)selectedDrink

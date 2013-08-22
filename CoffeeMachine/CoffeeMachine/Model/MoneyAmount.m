@@ -11,34 +11,21 @@
 #import "Withdraw.h"
 
 @implementation MoneyAmount
+@synthesize coins;
 -(id)init
 {
     self = [super init];
     if (self) {
-        Coin *c = [[Coin alloc]init];
-        [c setValue:5];
-        NSMutableArray *amount = [[NSMutableArray alloc]init];
-        [amount addObject:[NSNumber numberWithInteger:10]];
-        NSMutableArray *coin = [[NSMutableArray alloc]initWithObjects:c, nil];
-        coins=[[NSMutableDictionary alloc]initWithObjects:amount forKeys:coin];
+    self.coins = [NSMutableDictionary dictionary];
     }
     return self;
 }
--(NSDictionary *)getCoins {
-    return coins;
-}
 
--(int)getCoin:(Coin *)c{
-    return  [coins valueForKey:(id)c];
-}
+
+
 
 -(MoneyAmount *)add:(Coin *)c : (int)count {
     
-   // int totalCount = [ coins objectForKey:c ];
-   // int total  =  totalCount + count;
-   //[coins setObject:[NSNumber numberWithInteger:count] forKey:(id)c];
-    //Coin *c = [[Coin alloc]init];
-    //[c setValue:5];
     NSMutableArray *amount = [[NSMutableArray alloc]init];
     [amount addObject:[NSNumber numberWithInteger:count]];
     NSMutableArray *coin = [[NSMutableArray alloc]initWithObjects:c, nil];
@@ -50,6 +37,26 @@
     
     return self;
 }
+
+
+- (void)addCoin:(Coin *)coin amount:(NSUInteger)amount
+{
+    BOOL coinFound = NO;
+    for (Coin *storedCoin in [self.coins allKeys]) {
+        if ([storedCoin isEqual:coin]) {
+            coinFound = YES;
+            [self.coins setObject:@(amount + [self.coins[storedCoin] intValue]) forKey:storedCoin];
+            break;
+        }
+    }
+    
+    if (!coinFound) {
+        [self.coins setObject:@(amount) forKey:coin];
+    }
+}
+
+
+
 -(NSMutableArray*)getSortedCoinTypes{
     
     NSMutableArray *availableCoinTypes = [[NSMutableArray alloc]init];
@@ -77,7 +84,7 @@
         if (amount > 0 && (amount - coin.value >= 0)){
             coin=[sortedCoins objectAtIndex:i];
             int possibleCoinsToGet = amount / coin.value;
-            int totalAvailFromThisType = [self getCoin:coin];
+            int totalAvailFromThisType = [self.coins[coin] intValue];
             
             if (totalAvailFromThisType >= possibleCoinsToGet) {
                 [requestedCoins add:coin :possibleCoinsToGet];
@@ -101,35 +108,37 @@
     }
     Withdraw* withdraw=[[Withdraw alloc]init];
     WithdrawRequestResultStatus* status=INSUFFICIENT_AMOUNT;
-    //ßwithdraw=[withdraw StatusAndChange:status:requestedCoins ];
+    withdraw=[withdraw StatusAndChange:status:requestedCoins ];
     return withdraw;
     
 }
 -(void)getCoins:(Coin *)c :(int)count{
-    int availableCoins=[self getCoin:c];
+    int availableCoins=[self.coins[c] intValue];
     if(availableCoins < count){
         
     }
     int totalCount = availableCoins - count;
-    return [self.coins setObject:[NSNumber numberWithInteger:totalCount] forKey:(id)c];
+    return [coins setObject:[NSNumber numberWithInteger:totalCount] forKey:(id)c];
 }
 
--(NSString*)toString {
-    NSString *stringOfCoins=[[NSString alloc]init];
+-(NSString*)description {
+   /* NSString *stringOfCoins=[[NSString alloc]init];
     NSArray* values=[[NSArray alloc]init];
     NSArray* keys=[[NSArray alloc]init];
-    keys=[self.coins allKeys ];
+    keys=[coins allKeys ];
     values=[coins allValues];
     Coin* coin=[[Coin alloc]init];
     id key;
     for(int i=0;i<[coins count];i++)
     {   coin=[keys objectAtIndex:i];
         key=[values objectAtIndex:i];
-        stringOfCoins=[stringOfCoins stringByAppendingFormat:@"%@", coin];
-        stringOfCoins=[stringOfCoins stringByAppendingString:@"   - "];
-        stringOfCoins=[stringOfCoins stringByAppendingString:[NSString stringWithFormat:@"%@",key]];
+        //stringOfCoins=[stringOfCoins stringByAppendingFormat:@"%@", coin];
+       // stringOfCoins=[stringOfCoins stringByAppendingString:@"   - "];
+        //stringOfCoins=[stringOfCoins stringByAppendingString:[NSString stringWithFormat:@"%@",key]];
     }
-    return stringOfCoins;
+    */
+    return [NSString stringWithFormat:@"coin: %@", self.coins];
+    //return stringOfCoins;
     
     
 }
@@ -139,12 +148,12 @@
     int amount=0;
     Coin* coin=[[Coin alloc]init];
     for(int i=0;i<[coins count];i++){
-        amount=[self getCoin:coin]*coin.value;
+        amount=[self.coins[coin] intValue]*coin.value;
         
     }
     return amount;
 }
--(NSUInteger*)hashCode
+/*-(NSUInteger*)hashCode
 {
     return [coins hash];
 }
@@ -163,6 +172,6 @@
     return TRUE;
 }
 
-
+*/
 
 @end

@@ -10,11 +10,11 @@
 #import "MoneyAmount.h"
 #import "DrinksContainer.h"
 @interface CoffeeMachineState : NSObject
-{
-    MoneyAmount* coins;
-    DrinksContainer* currentDrinksAmount;
-    DrinksContainer* initialDrinksAmount;
-}
+
+    @property(strong)MoneyAmount* coins;
+    @property(strong)DrinksContainer* currentDrinksAmount;
+    @property(strong)DrinksContainer* initialDrinksAmount;
+
 
 -(MoneyAmount*) getCoins;
 -(void)setCoins:(MoneyAmount*)newCoins;

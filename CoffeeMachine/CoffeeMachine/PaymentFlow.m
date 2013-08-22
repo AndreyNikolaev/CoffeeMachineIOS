@@ -85,7 +85,7 @@
     MoneyAmount *mAmount = [[MoneyAmount alloc]init];
     //NSlog(@" %@ ",test);
     [mAmount add:coin:amount];
-    sumLbl.text = [mAmount toString];
+    //sumLbl.text = [mAmount toString];
     
     /*DrinksContainer* drContainer=[[DrinksContainer alloc]init];
     [drContainer setSomeDrinks];

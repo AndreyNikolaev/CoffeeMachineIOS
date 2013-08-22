@@ -7,8 +7,13 @@
 //
 
 #import "CoffeeMachineState.h"
+#import "DrinksContainer.h"
 
 @implementation CoffeeMachineState
+@synthesize currentDrinksAmount;
+@synthesize initialDrinksAmount;
+@synthesize coins;
+
 -(id)init:(MoneyAmount*) newCoins : (DrinksContainer*) newDrinks
 {
     self = [super init];
@@ -18,7 +23,7 @@
         initialDrinksAmount=[[DrinksContainer alloc]init ];
         NSMutableArray* currentDrinks=[[NSMutableArray alloc]initWithArray:[currentDrinksAmount getDrinks]];
         for(int i=0;i<[currentDrinks count];i++){
-            [initialDrinksAmount add:[currentDrinks objectAtIndex:i]];
+           // [initialDrinksAmount addDrink:<#(Drink *)#> quantity:<#(NSUInteger)#>:[currentDrinks objectAtIndex:i]];
         }
         [initialDrinksAmount commit];
         
@@ -44,10 +49,18 @@
 -(NSMutableDictionary*)getFiltratedDrinks
 {
     NSMutableDictionary* currentDrinks=[[NSMutableDictionary alloc]initWithDictionary:currentDrinksAmount.drinks];
-    NSMutableDictionary* filtratedDrinks=[[NSMutableDictionary alloc]init];
-  ß
+   // NSMutableDictionary* filtratedDrinks=[[NSMutableDictionary alloc]init];
+    
+    for (Drink *storedDrink in [currentDrinks allKeys]) {
+        if ([currentDrinks[storedDrink]integerValue] == 0) {
+            [currentDrinks removeObjectForKey:storedDrink];
+       // }else {
+           // [filtratedDrinks setObject:@([currentDrinks[storedDrink]integerValue]) forKey:storedDrink];
+        }
+    }
+
     
     
-    return filtratedDrinks;
+    return currentDrinks;
 }
 @end
