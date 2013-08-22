@@ -16,11 +16,9 @@ typedef enum
 } WithdrawRequestResultStatus;
 
 @interface Withdraw : NSObject
-{
-    WithdrawRequestResultStatus status;
-    MoneyAmount *change;
-}
--(WithdrawRequestResultStatus*) getStatus;
--(MoneyAmount*)getChange;
+
+@property WithdrawRequestResultStatus status;
+@property MoneyAmount *change;
+
 -(Withdraw *) StatusAndChange:(WithdrawRequestResultStatus) status : (MoneyAmount *)change;
 @end

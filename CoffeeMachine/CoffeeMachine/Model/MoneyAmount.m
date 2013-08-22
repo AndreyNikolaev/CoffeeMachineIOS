@@ -102,23 +102,21 @@
     
     if (amount==0) {
         Withdraw* withdraw=[[Withdraw alloc]init];
-        WithdrawRequestResultStatus* status=SUCCESSFUL;
-        withdraw=[withdraw StatusAndChange:status:requestedCoins ];
+        withdraw=[withdraw StatusAndChange:SUCCESSFUL:requestedCoins ];
         return withdraw;
     }
     Withdraw* withdraw=[[Withdraw alloc]init];
-    WithdrawRequestResultStatus* status=INSUFFICIENT_AMOUNT;
-    withdraw=[withdraw StatusAndChange:status:requestedCoins ];
+    withdraw=[withdraw StatusAndChange:INSUFFICIENT_AMOUNT:requestedCoins ];
     return withdraw;
     
 }
--(void)getCoins:(Coin *)c :(int)count{
-    int availableCoins=[self.coins[c] intValue];
+-(void)getCoins:(Coin *)coin :(int)count{
+    int availableCoins=[self.coins[coin] intValue];
     if(availableCoins < count){
         
     }
     int totalCount = availableCoins - count;
-    return [coins setObject:[NSNumber numberWithInteger:totalCount] forKey:(id)c];
+    return [coins setObject:[NSNumber numberWithInteger:totalCount] forKey:(id)coin];
 }
 
 -(NSString*)description {
@@ -141,11 +139,6 @@
     Coin* coinTwenty = [[Coin alloc]init];
     Coin* coinFifty  = [[Coin alloc]init];
     Coin* coinLev = [[Coin alloc]init];
-    
-                     
-   
-    
-    
     [self addCoin:coinFive amount:10];
     [self addCoin:coinTen amount:10];
     [self addCoin:coinTwenty amount:10];
@@ -154,6 +147,7 @@
     
     
 }
+
 
 /*-(NSUInteger*)hashCode
 {

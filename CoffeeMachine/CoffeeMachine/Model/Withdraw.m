@@ -16,20 +16,15 @@
 {
     self = [super init];
     if (self) {
-        status=nil;
+        status=SUCCESSFUL;
         change=[[MoneyAmount alloc]init];
         
     }
     return self;
 }
--(WithdrawRequestResultStatus)getStatus
-{
-    return status;
-}
--(MoneyAmount*)getChange
-{
-    return change;
-}
+
+@synthesize status;
+@synthesize change;
 -(Withdraw *) StatusAndChange:(WithdrawRequestResultStatus) newStatus : (MoneyAmount *)newChange {
     status  = newStatus;
     change = newChange;
