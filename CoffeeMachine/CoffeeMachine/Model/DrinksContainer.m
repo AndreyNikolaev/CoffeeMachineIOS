@@ -61,17 +61,28 @@
     return stringOfDrinksArray;
 }
 
--(void)setSomeDrinks
+-(void)setSomeDrinks // test function
 {
     Drink* drink1;
     Drink* drink2;
+    Drink* drink3;
+    Drink* drink4;
     drink1 = [[Drink alloc]init];
     drink2 = [[Drink alloc]init];
+    drink3 = [[Drink alloc]init];
+    drink4 = [[Drink alloc]init];
     drink1.name=@"Coffee";
     drink1.price=30;
     drink2.name=@"Tea";
+    drink2.price=20;
+    drink3.name=@"Long Coffßee";
+    drink3.price=40;
+    drink4.name=@"Hot Choko";
+    drink4.price=50;
     [self addDrink:drink1 quantity:100];
     [self addDrink:drink2 quantity:100];
+    [self addDrink:drink3 quantity:100];
+    [self addDrink:drink4 quantity:100];
     
     
 }

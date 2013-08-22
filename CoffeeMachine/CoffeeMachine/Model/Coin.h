@@ -23,4 +23,5 @@ typedef enum {
 @property int value;
 @property CoinValue coinValue;
 
+
 @end

@@ -10,6 +10,7 @@
 #import "PaymentFlow.h"
 #import "Drink.h"
 #import "DrinksContainer.h"
+#import "CoffeeMachineState.h"
 
 
 @interface ViewController ()
@@ -28,38 +29,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //navigationBar.topItem.title = @"Coffee Machine";
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     self.title = @"Coffee Machine";
     
-        /*Drink *drink_1=[[Drink alloc]init];
-    Drink *drink_2=[[Drink alloc]init];
-    [drink_1 setPrice:10];
-    [drink_1 SetName:@"Coffee"];
-    [drink_2 setPrice:30];
-    [drink_2 SetName:@"Tea"];
-    
-    DrinksHolder *drinkHold = [[DrinksHolder alloc]init];
-    DrinksHolder *drinkHold_2 = [[DrinksHolder alloc]init];
-    
-    [drinkHold setDrink:drink_1];
-    [drinkHold_2 setDrink:drink_2];
-    
-*/
-    
-    //itemsArray=[[NSArray alloc] initWithObjects:drink_2.toString,drink_1.toString, nil];
     DrinksContainer *drinks =[[ DrinksContainer alloc]init ];
-   drinks.setSomeDrinks;
-   // NSLog(@"test %@",drinks);
-    //itemsArray = [[ NSMutableArray alloc]initWithObjects:drinkHold.getDrink.toString, drinkHold_2.getDrink.toString, nil];
-   // drinks getStringDrinks];
-_itemsArray=[[NSMutableArray alloc]initWithArray:drinks.getStringDrinks];
-   //NSMutableArray *test = [[NSMutableArray alloc]init];
-    //[itemsArray addObjectsFromArray:drinks.getStringDrinks];
-    //[itemsArray addObject:@"test"];
-    //itemsArray=[drinks getStringDrinks];
-	
+    drinks.setSomeDrinks;
+    CoffeeMachineState* coffeeMachineState=[[CoffeeMachineState alloc]init];
+    [coffeeMachineState setCurrentDrinksAmount:drinks];
+    
+  
+    _itemsArray=[[NSMutableArray alloc]initWithArray:[[coffeeMachineState getCurrentDrinks] getStringDrinks]];
+   	
 }
 
 
