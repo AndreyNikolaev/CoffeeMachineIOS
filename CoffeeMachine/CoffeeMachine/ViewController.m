@@ -97,7 +97,7 @@
     
     PaymentFlow *paymentFlow = [[PaymentFlow alloc] init];
     paymentFlow.coffeeMachineState=_coffeeMachineState;
-    
+   
     
 
     [self.navigationController pushViewController:paymentFlow animated:YES];
