@@ -99,7 +99,7 @@
     
     for (Drink *storedDrink in [self.drinks allKeys]) {
         if ([searchedDrink.name isEqualToString:storedDrink.name]) {
-            quantity = (unsigned)[self.drinks valueForKey:storedDrink.name];
+            //quantity = (unsigned)[self.drinks valueForKey:storedDrink.name];
             break;
         }
     }

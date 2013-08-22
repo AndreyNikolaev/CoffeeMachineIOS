@@ -19,8 +19,9 @@
 @end
 
 @implementation PaymentFlow
-@synthesize chosenItemLabel;
 @synthesize sumLbl;
+@synthesize coffeeMachineState;
+@synthesize selectedDrink;
 @synthesize fiveBtn;
 @synthesize tenBtn;
 @synthesize twentyBtn;

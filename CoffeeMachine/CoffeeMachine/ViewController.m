@@ -23,6 +23,8 @@
 
 @synthesize itemsArray = _itemsArray;
 @synthesize tableView = _tableView;
+@synthesize coffeeMachineState=_coffeeMachineState;
+
 
 #pragma mark -
 
@@ -35,11 +37,11 @@
     
     DrinksContainer *drinks =[[ DrinksContainer alloc]init ];
     drinks.setSomeDrinks;
-    CoffeeMachineState* coffeeMachineState=[[CoffeeMachineState alloc]init];
-    [coffeeMachineState setCurrentDrinksAmount:drinks];
+    _coffeeMachineState=[[CoffeeMachineState alloc]init];
+    [_coffeeMachineState setCurrentDrinksAmount:drinks];
     
   
-    _itemsArray=[[NSMutableArray alloc]initWithArray:[[coffeeMachineState getCurrentDrinks] getStringDrinks]];
+    _itemsArray=[[NSMutableArray alloc]initWithArray:[[_coffeeMachineState getCurrentDrinks] getStringDrinks]];
    	
 }
 
@@ -93,11 +95,12 @@
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    PaymentFlow *pf = [[PaymentFlow alloc] init];
-    pf.title = _itemsArray[indexPath.row];
+    PaymentFlow *paymentFlow = [[PaymentFlow alloc] init];
+    paymentFlow.coffeeMachineState=_coffeeMachineState;
+    
     
 
-    [self.navigationController pushViewController:pf animated:YES];
+    [self.navigationController pushViewController:paymentFlow animated:YES];
 
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:nil action:nil];
     self.navigationItem.backBarButtonItem = backButton;

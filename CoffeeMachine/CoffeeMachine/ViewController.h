@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CoffeeMachineState.h"
 
 NSInteger globalPrice;
 
@@ -15,5 +16,7 @@ NSInteger globalPrice;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 @property(strong, nonatomic) NSMutableArray *itemsArray;
+@property(strong) CoffeeMachineState *coffeeMachineState;
+
 
 @end

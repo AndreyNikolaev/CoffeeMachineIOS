@@ -42,21 +42,15 @@
 {
     return initialDrinksAmount;
 }
--(void)setCoins:(MoneyAmount*)newCoins
-{
-    coins=newCoins;
-}
+
 -(NSMutableDictionary*)getFiltratedDrinks
 {
     NSMutableDictionary* currentDrinks=[[NSMutableDictionary alloc]initWithDictionary:currentDrinksAmount.drinks];
-   // NSMutableDictionary* filtratedDrinks=[[NSMutableDictionary alloc]init];
-    
+       
     for (Drink *storedDrink in [currentDrinks allKeys]) {
         if ([currentDrinks[storedDrink]integerValue] == 0) {
             [currentDrinks removeObjectForKey:storedDrink];
-       // }else {
-           // [filtratedDrinks setObject:@([currentDrinks[storedDrink]integerValue]) forKey:storedDrink];
-        }
+               }
     }
 
     
