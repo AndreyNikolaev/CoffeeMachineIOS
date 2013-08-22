@@ -143,12 +143,8 @@
     Coin* coinLev = [[Coin alloc]init];
     
                      
-<<<<<<< HEAD
         
-=======
-   
-    
->>>>>>> e50e4f34b4454e5180c9efea34a1920f0ef0dbf2
+
     
     [self addCoin:coinFive amount:10];
     [self addCoin:coinTen amount:10];

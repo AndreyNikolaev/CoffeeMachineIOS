@@ -70,14 +70,12 @@
     sumLbl.text=[NSString stringWithFormat:@"%d",[self.userCoins sumOfCoins]];
 }
 - (IBAction)sumFive:(id)sender {
-<<<<<<< HEAD
     Coin *userCoin=[[Coin alloc]init];
     userCoin.value=5;
     [userCoins addCoin:userCoin amount:1];
     sumLbl.text=result;
-=======
+
     [self setCoinInUserCoins:5];
->>>>>>> e50e4f34b4454e5180c9efea34a1920f0ef0dbf2
 
 }
 
@@ -88,16 +86,14 @@
 }
 
 - (IBAction)sumTwenty:(id)sender {
-<<<<<<< HEAD
-    [self checkTheSum];
+    
     sum+=20;
     result= [NSString stringWithFormat:@"%d", sum];
     
     sumLbl.text=result;
     
-=======
    [self setCoinInUserCoins:20];
->>>>>>> e50e4f34b4454e5180c9efea34a1920f0ef0dbf2
+    [self checkTheSum];
 }
 
 - (IBAction)sumFifty:(id)sender {
@@ -109,7 +105,7 @@
     [self setCoinInUserCoins:100];}
 
 - (void) checkTheSum {
-    if( userCoins.sumOfCoins < selectedDrink.price){
+    if( userCoins.sumOfCoins > selectedDrink.price){
         ViewController *vc = [[ViewController alloc]initWithNibName:@"ViewController" bundle:nil];
         [self presentViewController:vc animated:YES completion:nil];
     }
