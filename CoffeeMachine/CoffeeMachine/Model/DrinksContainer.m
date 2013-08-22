@@ -74,11 +74,11 @@
     drink1.name=@"Coffee";
     drink1.price=30;
     drink2.name=@"Tea";
-    drink1.price=20;
-    drink3.name=@"LongCofee";
+    drink2.price=20;
+    drink3.name=@"Long Coffßee";
     drink3.price=40;
     drink4.name=@"Hot Choko";
-    drink4.price=50;ß
+    drink4.price=50;
     [self addDrink:drink1 quantity:100];
     [self addDrink:drink2 quantity:100];
     [self addDrink:drink3 quantity:100];
