@@ -25,7 +25,6 @@
 -(int)sumOfCoins;
 - (void)addCoin:(Coin *)coin amount:(NSUInteger)amount;
 -(void)setSomeCoins;
-//-(NSUInteger*)hashCode;
-//-(BOOL)equals:(id)obj;
+
 
 @end
