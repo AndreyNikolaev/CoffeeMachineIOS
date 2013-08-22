@@ -153,6 +153,32 @@
     }
     return amount;
 }
+
+
+-(void)setSomeCoins
+{   Coin* coinFive = [[Coin alloc]init];
+    Coin* coinTen = [[Coin alloc]init];
+    Coin* coinTwenty = [[Coin alloc]init];
+    Coin* coinFifty  = [[Coin alloc]init];
+    Coin* coinLev = [[Coin alloc]init];
+    
+                     
+    coinFive.coinValue = FIVE;
+    coinTen.coinValue = TEN;
+    coinTwenty.coinValue = TWENTY;
+    coinFifty.coinValue = FIFTY;
+    coinLev.coinValue = LEV100;
+    
+    
+    [self addCoin:coinFive amount:10];
+    [self addCoin:coinTen amount:10];
+    [self addCoin:coinTwenty amount:10];
+    [self addCoin:coinFifty amount:10];
+    [self addCoin:coinLev amount:10];
+    
+    
+}
+
 /*-(NSUInteger*)hashCode
 {
     return [coins hash];

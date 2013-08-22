@@ -16,6 +16,7 @@
     if (self) {
         //init code here
         self.value = 0;
+        self.coinValue = 0;
     }
     return self;
 }

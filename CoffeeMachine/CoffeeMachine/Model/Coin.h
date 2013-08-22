@@ -21,5 +21,6 @@ typedef enum {
 @interface Coin : NSObject
 
 @property int value;
+@property CoinValue coinValue;
 
 @end
