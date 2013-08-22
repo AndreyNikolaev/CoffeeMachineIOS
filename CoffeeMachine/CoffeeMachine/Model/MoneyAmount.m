@@ -122,34 +122,14 @@
 }
 
 -(NSString*)description {
-   /* NSString *stringOfCoins=[[NSString alloc]init];
-    NSArray* values=[[NSArray alloc]init];
-    NSArray* keys=[[NSArray alloc]init];
-    keys=[coins allKeys ];
-    values=[coins allValues];
-    Coin* coin=[[Coin alloc]init];
-    id key;
-    for(int i=0;i<[coins count];i++)
-    {   coin=[keys objectAtIndex:i];
-        key=[values objectAtIndex:i];
-        //stringOfCoins=[stringOfCoins stringByAppendingFormat:@"%@", coin];
-       // stringOfCoins=[stringOfCoins stringByAppendingString:@"   - "];
-        //stringOfCoins=[stringOfCoins stringByAppendingString:[NSString stringWithFormat:@"%@",key]];
-    }
-    */
-    return [NSString stringWithFormat:@"coin: %@", self.coins];
-    //return stringOfCoins;
-    
-    
+       return [NSString stringWithFormat:@"coin: %@", self.coins];
 }
 
 -(int)sumOfCoins
 {
     int amount=0;
-    Coin* coin=[[Coin alloc]init];
-    for(int i=0;i<[coins count];i++){
-        amount=[self.coins[coin] intValue]*coin.value;
-        
+    for (Coin *coin in [self.coins allKeys]) {
+        amount+=coin.value;
     }
     return amount;
 }
@@ -163,7 +143,12 @@
     Coin* coinLev = [[Coin alloc]init];
     
                      
+<<<<<<< HEAD
         
+=======
+   
+    
+>>>>>>> e50e4f34b4454e5180c9efea34a1920f0ef0dbf2
     
     [self addCoin:coinFive amount:10];
     [self addCoin:coinTen amount:10];
