@@ -18,7 +18,7 @@ typedef enum {
     
 } CoinValue;
 
-@interface Coin : NSObject
+@interface Coin : NSObject<NSCopying>
 
 @property int value;
 @property CoinValue coinValue;
