@@ -59,56 +59,39 @@
 
 - (IBAction)switchBack:(id)sender {
     ViewController *vc = [[ViewController alloc]initWithNibName:@"ViewController"bundle:nil ];
-    //[self presentViewController:vc animated:YES completion:nil];
     [[self navigationController ]setNavigationBarHidden:NO animated:YES];
-    
-    //    pf.title = itemsArray[indexPath.row];
-    //vc.sizes = @[@"Small", @"Medium", @"Large", @"Extra Large"];
     [self.navigationController pushViewController:vc animated:YES];
 }
-
+-(void)setCoinInUserCoins:(int)coinValue
+{
+    Coin *userCoin=[[Coin alloc]init];
+    userCoin.value=coinValue;
+    [self.userCoins addCoin:userCoin amount:1];
+    sumLbl.text=[NSString stringWithFormat:@"%d",[self.userCoins sumOfCoins]];
+}
 - (IBAction)sumFive:(id)sender {
-   ß Coin *userCoin=[[Coin alloc]init];
-    userCoin.value=5;
-    [userCoins addCoin:userCoin amount:1];
-    sumLbl.text=result;
+    [self setCoinInUserCoins:5];
 
 }
 
 - (IBAction)sumTen:(id)sender {
-   sum+=10;
-    result= [NSString stringWithFormat:@"%d", sum];
-    sumLbl.text=result;
-    Coin *coin = [[Coin alloc]init];
-    [coin setValue:10];
-    int amount = 10;
-    MoneyAmount *mAmount = [[MoneyAmount alloc]init];
-    [mAmount add:coin:amount];
-       
-
+    
+   [self setCoinInUserCoins:10];
+    
 }
 
 - (IBAction)sumTwenty:(id)sender {
-    sum+=20;
-    result= [NSString stringWithFormat:@"%d", sum];
-    
-    sumLbl.text=result;
+   [self setCoinInUserCoins:20];
 }
 
 - (IBAction)sumFifty:(id)sender {
-    sum+=50;
-    result= [NSString stringWithFormat:@"%d", sum];
-    
-    sumLbl.text=result;
+   [self setCoinInUserCoins:50];
     
 }
 
 - (IBAction)sumLev:(id)sender {
-    sum+=100;
-    result= [NSString stringWithFormat:@"%d", sum];
-    
-    sumLbl.text=result;
-}
+    [self setCoinInUserCoins:100];}
+
 - (void) checkTheSum {
     if(sum > 0){
         ViewController *vc = [[ViewController alloc]initWithNibName:@"ViewController" bundle:nil];
