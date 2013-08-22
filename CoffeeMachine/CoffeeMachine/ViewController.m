@@ -69,10 +69,7 @@
     if(cell==nil){
         cell=[[UITableViewCell alloc]initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:@"cell" ];
     }
-    //NSString *string1=@"Coffee";
-    //itemsArray = [NSMutableArray arrayWithObjects:@"Coffee",@"Tea", @"Hot chocolate",nil];
-    
-    
+        
     NSUInteger count = [_itemsArray count];
     for (NSUInteger i = 0; i < count; i++) {
         if(indexPath.row==i){
@@ -81,9 +78,7 @@
             cell.textLabel.text=current;
         }
     }
-    
-    //int x=10;
-    //cell.textLabel.text=[string1 stringByAppendingFormat:@" - %d ",x];return cell;
+  
     return cell;
 }
 
