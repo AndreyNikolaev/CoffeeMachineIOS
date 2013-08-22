@@ -163,12 +163,7 @@
     Coin* coinLev = [[Coin alloc]init];
     
                      
-    coinFive.coinValue = FIVE;
-    coinTen.coinValue = TEN;
-    coinTwenty.coinValue = TWENTY;
-    coinFifty.coinValue = FIFTY;
-    coinLev.coinValue = LEV100;
-    
+        
     
     [self addCoin:coinFive amount:10];
     [self addCoin:coinTen amount:10];
