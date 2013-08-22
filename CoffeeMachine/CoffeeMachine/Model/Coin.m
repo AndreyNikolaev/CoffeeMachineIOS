@@ -16,7 +16,7 @@
     if (self) {
         //init code here
         self.value = 0;
-        self.coinValue = 0;
+       
     }
     return self;
 }
@@ -29,8 +29,7 @@
 {
     Coin *coin  = [[Coin alloc] init];
     coin.value = self.value;
-    coin.coinValue = self.coinValue;
-    
+      
     return coin;
 }
 

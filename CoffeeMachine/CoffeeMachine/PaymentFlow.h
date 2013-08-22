@@ -10,6 +10,7 @@
 
 @class CoffeeMachineState;
 @class Drink;
+@class MoneyAmount;
 
 int sum;
 NSString *result;
@@ -18,7 +19,7 @@ NSString *result;
 
 @property (strong) CoffeeMachineState *coffeeMachineState;
 @property (strong) Drink *selectedDrink;
-
+@property (strong) MoneyAmount *userCoins;
 
 @property (strong, nonatomic) IBOutlet UIButton *fiveBtn;
 @property (strong, nonatomic) IBOutlet UILabel *sumLbl;

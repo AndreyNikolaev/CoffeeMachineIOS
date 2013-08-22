@@ -9,19 +9,11 @@
 
 #import <Foundation/Foundation.h>
 
-typedef enum {
-    FIVE,
-    TEN,
-    TWENTY,
-    FIFTY,
-    LEV100
-    
-} CoinValue;
 
 @interface Coin : NSObject<NSCopying>
 
 @property int value;
-@property CoinValue coinValue;
+
 
 
 @end

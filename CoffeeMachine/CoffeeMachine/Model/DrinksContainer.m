@@ -45,9 +45,9 @@
 {
     return self.additionClosed;
 }
--(NSMutableDictionary*)getDrinks
-{
-    return self.drinks;
+-(NSArray*)getDrinks
+{   NSArray* tempDrinks=[[NSArray alloc]initWithArray:[self.drinks allKeys]];
+    return tempDrinks;
 }
 
 -(NSMutableArray*)getStringDrinks

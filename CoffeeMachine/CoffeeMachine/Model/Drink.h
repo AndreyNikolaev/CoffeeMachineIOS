@@ -12,6 +12,7 @@
 
 @property (strong) NSString *name;
 @property NSUInteger price;
+-(NSString*)description;
 
 @end
 

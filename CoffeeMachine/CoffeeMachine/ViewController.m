@@ -77,12 +77,7 @@
             cell.textLabel.text=current;
         }
     }
-<<<<<<< HEAD
-    
-   
-=======
-  
->>>>>>> bf03fa33debedc9f947b075c98888a1521659059
+
     return cell;
 }
 
@@ -90,19 +85,16 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
    
-    
-    
+    DrinksContainer* tempDrinkContainer=[[DrinksContainer alloc]init];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     PaymentFlow *paymentFlow = [[PaymentFlow alloc] init];
     paymentFlow.coffeeMachineState=_coffeeMachineState;
-<<<<<<< HEAD
-    
     paymentFlow.title = _itemsArray[indexPath.row];
-=======
-   
-    
->>>>>>> bf03fa33debedc9f947b075c98888a1521659059
+    tempDrinkContainer=_coffeeMachineState.currentDrinksAmount;
+    NSArray* tempDrinksArray=[[NSArray alloc]initWithArray:[tempDrinkContainer getDrinks]];
+    paymentFlow.selectedDrink=[tempDrinksArray objectAtIndex:indexPath.row];
+
 
     [self.navigationController pushViewController:paymentFlow animated:YES];
 

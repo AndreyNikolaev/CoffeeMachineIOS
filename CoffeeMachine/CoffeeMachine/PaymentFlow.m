@@ -14,14 +14,18 @@
 #import"MoneyAmount.h"
 #import "Withdraw.h"
 #import "CoffeeMachineState.h"
+#import "Drink.h"
 @interface PaymentFlow ()
 
 @end
 
 @implementation PaymentFlow
-@synthesize sumLbl;
+
 @synthesize coffeeMachineState;
 @synthesize selectedDrink;
+@synthesize userCoins;
+
+@synthesize sumLbl;
 @synthesize fiveBtn;
 @synthesize tenBtn;
 @synthesize twentyBtn;
@@ -42,7 +46,9 @@
 {
     [super viewDidLoad];
     sum = 0;
+    userCoins=[[MoneyAmount alloc]init];
     // Do any additional setup after loading the view from its nib.
+   
 }
 
 - (void)didReceiveMemoryWarning
@@ -62,11 +68,9 @@
 }
 
 - (IBAction)sumFive:(id)sender {
-   // [ self checkTheSum];
-    //sumLbl.text;
-    sum+=5;
-    result= [NSString stringWithFormat:@"%d", sum];
-    
+   ß Coin *userCoin=[[Coin alloc]init];
+    userCoin.value=5;
+    [userCoins addCoin:userCoin amount:1];
     sumLbl.text=result;
 
 }
@@ -74,31 +78,13 @@
 - (IBAction)sumTen:(id)sender {
    sum+=10;
     result= [NSString stringWithFormat:@"%d", sum];
-    
     sumLbl.text=result;
-    
-    
     Coin *coin = [[Coin alloc]init];
     [coin setValue:10];
-   // NSArray *coinsArr = [[NSArray alloc]initWithObjects:coin, nil ];
     int amount = 10;
-//NSArray *amountsArr =[[NSArray alloc]initWithObjects:[NSNumber numberWithInteger:amount], nil];
     MoneyAmount *mAmount = [[MoneyAmount alloc]init];
-    //NSlog(@" %@ ",test);
     [mAmount add:coin:amount];
-    //sumLbl.text = [mAmount toString];
-    
-    /*DrinksContainer* drContainer=[[DrinksContainer alloc]init];
-    [drContainer setSomeDrinks];
-    NSMutableArray* drinks=[[NSMutableArray alloc]init];
-    drinks=[drContainer getStringDrinks];
-    NSUInteger* countOfDrinks = [drinks count ];
-    NSLog(@"Count of drinks ",[NSString stringWithFormat:@"%d",countOfDrinks]);
-    for (int i=0; i<drinks.count; i++) {
-        NSLog(@"%@",[drinks objectAtIndex:i]);
-     */
-//}
-    
+       
 
 }
 
