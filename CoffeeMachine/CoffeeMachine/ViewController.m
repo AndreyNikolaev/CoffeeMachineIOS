@@ -46,6 +46,7 @@
     
   
     _itemsArray=[[NSMutableArray alloc]initWithArray:[[_coffeeMachineState getCurrentDrinks] getStringDrinks]];
+   
    	
 }
 
@@ -77,12 +78,9 @@
             cell.textLabel.text=current;
         }
     }
-<<<<<<< HEAD
     
    
-=======
-  
->>>>>>> bf03fa33debedc9f947b075c98888a1521659059
+
     return cell;
 }
 
@@ -96,13 +94,13 @@
     
     PaymentFlow *paymentFlow = [[PaymentFlow alloc] init];
     paymentFlow.coffeeMachineState=_coffeeMachineState;
-<<<<<<< HEAD
+
     
     paymentFlow.title = _itemsArray[indexPath.row];
-=======
+
    
     
->>>>>>> bf03fa33debedc9f947b075c98888a1521659059
+
 
     [self.navigationController pushViewController:paymentFlow animated:YES];
 
