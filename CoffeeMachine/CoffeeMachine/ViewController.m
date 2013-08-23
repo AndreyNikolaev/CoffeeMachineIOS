@@ -78,7 +78,10 @@
             cell.textLabel.text=current;
         }
     }
+<<<<<<< HEAD
+=======
 
+>>>>>>> ffa00a0aff066884ac1981818aa7210e5b4b80e8
 
 
     return cell;
@@ -104,7 +107,10 @@
     tempDrinkContainer=_coffeeMachineState.currentDrinksAmount;
     NSArray* tempDrinksArray=[[NSArray alloc]initWithArray:[tempDrinkContainer getDrinks]];
     paymentFlow.selectedDrink=[tempDrinksArray objectAtIndex:indexPath.row];
+<<<<<<< HEAD
+=======
 
+>>>>>>> ffa00a0aff066884ac1981818aa7210e5b4b80e8
 
 
     [self.navigationController pushViewController:paymentFlow animated:YES];
