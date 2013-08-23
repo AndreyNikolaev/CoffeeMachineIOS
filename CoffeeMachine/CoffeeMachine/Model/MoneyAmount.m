@@ -67,9 +67,7 @@
 
 -(Withdraw *)withdraw:(int)amount {
     MoneyAmount *requestedCoins = [[MoneyAmount alloc]init];
-    if ( amount < 0 ){
-        
-    }
+    
     if (amount == 0) {
         WithdrawRequestResultStatus req = SUCCESSFUL;
         Withdraw *withdraw = [[Withdraw alloc]init] ;
