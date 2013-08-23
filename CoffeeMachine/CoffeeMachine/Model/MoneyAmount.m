@@ -139,14 +139,7 @@
     Coin* coinTwenty = [[Coin alloc]init];
     Coin* coinFifty  = [[Coin alloc]init];
     Coin* coinLev = [[Coin alloc]init];
-<<<<<<< HEAD
-=======
-    
-                     
-        
 
-    
->>>>>>> ca3a4adc76936bf7023630df7e808924760e82d7
     [self addCoin:coinFive amount:10];
     [self addCoin:coinTen amount:10];
     [self addCoin:coinTwenty amount:10];
