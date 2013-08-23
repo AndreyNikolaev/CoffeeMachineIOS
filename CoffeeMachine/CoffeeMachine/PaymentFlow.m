@@ -102,7 +102,7 @@
 - (void) checkTheSum {
     if( userCoins.sumOfCoins > selectedDrink.price){
         
-        if([coffeeMachineState.coins withdraw:[userCoins sumOfCoins]].status == SUCCESSFUL){
+        if([[coffeeMachineState.coins withdraw:[[userCoins sumOfCoins]-selectedDrink.price]]==SUCCESSFUL){
             OrderFinalizeFlow *orderFinalizeFlow=[[OrderFinalizeFlow alloc]init];
             [self presentViewController:orderFinalizeFlow animated:YES completion:nil];
         }

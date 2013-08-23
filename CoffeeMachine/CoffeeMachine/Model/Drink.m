@@ -20,7 +20,8 @@
     }
     return self;
 }
-
+@synthesize price;
+@synthesize name;
 
 -(NSString*)description
 {
