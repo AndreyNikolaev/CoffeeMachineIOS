@@ -100,7 +100,7 @@
 }
 
 - (void) checkTheSum {
-    if( userCoins.sumOfCoins > selectedDrink.price){
+    if( userCoins.sumOfCoins >= selectedDrink.price){
         int test = [userCoins sumOfCoins] - selectedDrink.price;
         if([coffeeMachineState.coins withdraw:test].status== SUCCESSFUL){
         
