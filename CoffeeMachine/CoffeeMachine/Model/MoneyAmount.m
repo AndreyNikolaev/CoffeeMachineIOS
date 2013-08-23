@@ -59,8 +59,8 @@
 
 -(NSMutableArray*)getSortedCoinTypes{
     
-    NSMutableArray *availableCoinTypes = [[NSMutableArray alloc]init];
-    [availableCoinTypes sortedArrayUsingSelector:@selector(integerValue:)];
+    NSMutableArray *availableCoinTypes = [[NSMutableArray alloc]initWithArray:[coins allKeys]];
+    [availableCoinTypes sortedArrayUsingSelector:@selector(compare)];
     return availableCoinTypes;
     
 }
@@ -78,8 +78,27 @@
     Coin* coin=[[Coin alloc]init];
     NSArray* sortedCoins=[[NSArray alloc]init];
     sortedCoins=[self getSortedCoinTypes];
-    for(int i=0;i<[sortedCoins count];i++){
-        if (amount > 0 && (amount - coin.value >= 0)){
+    for (coin in [self.coins allKeys]) {
+        if (amount - coin.value >= 0){
+            int possibleCoinsToGet = amount / coin.value;
+            int totalAvailFromThisType = [self.coins[coin] intValue];
+            
+            if (totalAvailFromThisType >= possibleCoinsToGet) {
+                [requestedCoins add:coin :possibleCoinsToGet];
+                [self getCoins:coin :possibleCoinsToGet];
+                amount-=coin.value*possibleCoinsToGet;
+                
+            } else if(totalAvailFromThisType < possibleCoinsToGet){
+                [requestedCoins add:coin :totalAvailFromThisType];
+                [self getCoins:coin :totalAvailFromThisType];
+                amount -= coin.value * totalAvailFromThisType;
+            }
+        }
+    }
+    
+    /*for(int i=0;i<[sortedCoins count];i++){
+        coin=[sortedCoins objectAtIndex:i];
+        if (amount - coin.value >= 0){
             coin=[sortedCoins objectAtIndex:i];
             int possibleCoinsToGet = amount / coin.value;
             int totalAvailFromThisType = [self.coins[coin] intValue];
@@ -96,7 +115,8 @@
             }
         }
         
-    }
+    }*/
+    
     
     if (amount==0) {
         Withdraw* withdraw=[[Withdraw alloc]init];
@@ -145,14 +165,15 @@
 
     coinLev.value=100;
 
-
-    [self addCoin:coinFive amount:10];
-    [self addCoin:coinTen amount:10];
-    [self addCoin:coinTwenty amount:10];
-    [self addCoin:coinFifty amount:10];
     [self addCoin:coinLev amount:10];
+    [self addCoin:coinFifty amount:10];
+    [self addCoin:coinTwenty amount:10];
+    [self addCoin:coinTen amount:10];
+    [self addCoin:coinFive amount:10];
     
     
+    
+        
 }
 
 

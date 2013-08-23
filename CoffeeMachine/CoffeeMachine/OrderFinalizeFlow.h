@@ -7,7 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+@class Drink;
+@class MoneyAmount;
+@class CoffeeMachineState;
+
 
 @interface OrderFinalizeFlow : UIViewController
+@property (strong, nonatomic) IBOutlet UILabel *drinkLbl;
+@property (strong, nonatomic) IBOutlet UILabel *changeLbl;
+
+@property Drink* selectedDrink;
+@property MoneyAmount* change;
+@property CoffeeMachineState* coffeeMachineState;
 
 @end

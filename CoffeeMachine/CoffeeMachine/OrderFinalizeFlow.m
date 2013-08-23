@@ -14,6 +14,10 @@
 
 @implementation OrderFinalizeFlow
 
+@synthesize selectedDrink;
+@synthesize change;
+@synthesize coffeeMachineState;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];

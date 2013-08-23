@@ -99,12 +99,15 @@
     [self checkTheSum];
 }
 
-- (void) checkTheSum {
+- (void) checkTheSum {  //BAD NAME
     if( userCoins.sumOfCoins >= selectedDrink.price){
         int test = [userCoins sumOfCoins] - selectedDrink.price;
         if([coffeeMachineState.coins withdraw:test].status== SUCCESSFUL){
         
-            OrderFinalizeFlow *orderFinalizeFlow=[[OrderFinalizeFlow alloc]initWithNibName:@"orderFinalizeFlow" bundle:nil];
+            OrderFinalizeFlow *orderFinalizeFlow=[[OrderFinalizeFlow alloc]initWithNibName:@"OrderFinalizeFlow" bundle:nil];
+            orderFinalizeFlow.coffeeMachineState=self.coffeeMachineState;
+            orderFinalizeFlow.selectedDrink=self.selectedDrink;
+            orderFinalizeFlow.change=[self.coffeeMachineState.coins withdraw:test].change;
             [self presentViewController:orderFinalizeFlow animated:YES completion:nil];
         }
         else{
@@ -112,8 +115,7 @@
             [self presentViewController:insAmountFlow animated:YES completion:nil];
         }
         
-       // ViewController *vc = [[ViewController alloc]initWithNibName:@"ViewController" bundle:nil];
-        //[self presentViewController:vc animated:YES completion:nil];
+      
     }
 }
 @end
