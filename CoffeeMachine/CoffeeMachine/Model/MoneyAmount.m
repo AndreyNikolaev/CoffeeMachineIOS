@@ -57,12 +57,18 @@
 
 
 
--(NSMutableArray*)getSortedCoinTypes{
+-(NSArray*)getSortedCoinTypes{
     
-    NSMutableArray *availableCoinTypes = [[NSMutableArray alloc]init];
-    [availableCoinTypes sortedArrayUsingSelector:@selector(integerValue:)];
+    NSArray *availableCoinTypes = [[NSMutableArray alloc]initWithArray:coins.allKeys];
+    
+    [availableCoinTypes sortedArrayUsingSelector:@selector(value)];
+    //NSLog(@"array: %@", [availableCoinTypes description]);
+   // NSArray *sortedArray = [availableCoinTypes sortedArrayUsingSelector:@selector(integerValue)];
+    //Lets print the sorted Array
+    
+   NSLog(@"array=%@",availableCoinTypes);
+       
     return availableCoinTypes;
-    
 }
 
 -(Withdraw *)withdraw:(int)amount {

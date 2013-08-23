@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface InsufficientAmountFlow : UIViewController
+@property (strong, nonatomic) IBOutlet UIButton *makeDrinkBtn;
+@property (strong, nonatomic) IBOutlet UIButton *cancelOrderBtn;
+- (IBAction)switchToFinalizeFlow:(id)sender;
+- (IBAction)switchToDrinkListFlow:(id)sender;
 
 @end
