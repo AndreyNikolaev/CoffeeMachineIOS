@@ -135,10 +135,18 @@
 
 -(void)setSomeCoins
 {   Coin* coinFive = [[Coin alloc]init];
+    coinFive.value=5;
     Coin* coinTen = [[Coin alloc]init];
+    coinTen.value=10;
     Coin* coinTwenty = [[Coin alloc]init];
+    coinTwenty.value=20;
     Coin* coinFifty  = [[Coin alloc]init];
+    coinFifty.value=50;
     Coin* coinLev = [[Coin alloc]init];
+<<<<<<< HEAD
+=======
+    coinLev.value=100;
+>>>>>>> ffa00a0aff066884ac1981818aa7210e5b4b80e8
 
     [self addCoin:coinFive amount:10];
     [self addCoin:coinTen amount:10];

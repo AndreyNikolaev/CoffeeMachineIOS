@@ -37,9 +37,9 @@
     self.title = @"Coffee Machine";
     
     DrinksContainer *drinks =[[ DrinksContainer alloc]init ];
-    drinks.setSomeDrinks;
+    [drinks setSomeDrinks];
     MoneyAmount *moneyAmount = [[MoneyAmount alloc]init];
-    moneyAmount.setSomeCoins;
+    [moneyAmount setSomeCoins];
     _coffeeMachineState=[[CoffeeMachineState alloc]init];
     [_coffeeMachineState setCurrentDrinksAmount:drinks];
     _coffeeMachineState.coins = moneyAmount;
@@ -78,6 +78,10 @@
             cell.textLabel.text=current;
         }
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> ffa00a0aff066884ac1981818aa7210e5b4b80e8
 
 
     return cell;
@@ -103,6 +107,10 @@
     tempDrinkContainer=_coffeeMachineState.currentDrinksAmount;
     NSArray* tempDrinksArray=[[NSArray alloc]initWithArray:[tempDrinkContainer getDrinks]];
     paymentFlow.selectedDrink=[tempDrinksArray objectAtIndex:indexPath.row];
+<<<<<<< HEAD
+=======
+
+>>>>>>> ffa00a0aff066884ac1981818aa7210e5b4b80e8
 
 
     [self.navigationController pushViewController:paymentFlow animated:YES];

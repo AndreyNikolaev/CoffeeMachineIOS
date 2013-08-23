@@ -9,12 +9,14 @@
 #import "PaymentFlow.h"
 #import "ViewController.h"
 #import "DrinksContainer.h"
-
+#import "Withdraw.h"
 #import "Coin.h"
 #import"MoneyAmount.h"
 #import "Withdraw.h"
 #import "CoffeeMachineState.h"
 #import "Drink.h"
+#import "OrderFinalizeFlow.h"
+#import "InsufficientAmountFlow.h"
 @interface PaymentFlow ()
 
 @end
@@ -70,44 +72,47 @@
     sumLbl.text=[NSString stringWithFormat:@"%d",[self.userCoins sumOfCoins]];
 }
 - (IBAction)sumFive:(id)sender {
-    Coin *userCoin=[[Coin alloc]init];
-    userCoin.value=5;
-    [userCoins addCoin:userCoin amount:1];
-    sumLbl.text=result;
-
+ 
     [self setCoinInUserCoins:5];
-
+    [self checkTheSum];
 }
 
 - (IBAction)sumTen:(id)sender {
     
    [self setCoinInUserCoins:10];
-    
+    [self checkTheSum];
 }
 
 - (IBAction)sumTwenty:(id)sender {
-    
-    sum+=20;
-    result= [NSString stringWithFormat:@"%d", sum];
-    
-    sumLbl.text=result;
-    
+        
    [self setCoinInUserCoins:20];
     [self checkTheSum];
 }
 
 - (IBAction)sumFifty:(id)sender {
    [self setCoinInUserCoins:50];
-    
+   [self checkTheSum];
 }
 
 - (IBAction)sumLev:(id)sender {
-    [self setCoinInUserCoins:100];}
+    [self setCoinInUserCoins:100];
+    [self checkTheSum];
+}
 
 - (void) checkTheSum {
     if( userCoins.sumOfCoins > selectedDrink.price){
-        ViewController *vc = [[ViewController alloc]initWithNibName:@"ViewController" bundle:nil];
-        [self presentViewController:vc animated:YES completion:nil];
+        
+        if([coffeeMachineState.coins withdraw:[userCoins sumOfCoins]].status == SUCCESSFUL){
+            OrderFinalizeFlow *orderFinalizeFlow=[[OrderFinalizeFlow alloc]init];
+            [self presentViewController:orderFinalizeFlow animated:YES completion:nil];
+        }
+        else{
+            InsufficientAmountFlow *insAmountFlow=[[InsufficientAmountFlow alloc]initWithNibName:@"InsufficientAmountFlow" bundle:nil];
+            [self presentViewController:insAmountFlow animated:YES completion:nil];
+        }
+        
+       // ViewController *vc = [[ViewController alloc]initWithNibName:@"ViewController" bundle:nil];
+        //[self presentViewController:vc animated:YES completion:nil];
     }
 }
 @end
