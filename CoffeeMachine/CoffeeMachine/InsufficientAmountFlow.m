@@ -7,6 +7,8 @@
 //
 
 #import "InsufficientAmountFlow.h"
+#import "OrderFinalizeFlow.h"
+#import "ViewController.h"
 
 @interface InsufficientAmountFlow ()
 
@@ -35,4 +37,29 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)switchToFinalizeFlow:(id)sender {
+    OrderFinalizeFlow *orderFinalizeFlow = [[OrderFinalizeFlow alloc]initWithNibName:@"OrderFinalizeFlow" bundle:nil];
+    [self presentViewController: orderFinalizeFlow animated:YES completion:nil];
+}
+
+- (IBAction)switchToDrinkListFlow:(id)sender {
+    ViewController *drinkListFlow = [[ViewController alloc]initWithNibName:@"ViewController" bundle:nil];
+    //drinkListFlow.title = @"Coffee Machine";
+    [self presentViewController:drinkListFlow animated:YES completion:nil];
+    
+}
+
+
+
 @end
+
+
+
+
+
+
+
+
+
+
+
