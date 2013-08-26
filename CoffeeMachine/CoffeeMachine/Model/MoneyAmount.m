@@ -79,7 +79,7 @@
     NSArray* sortedCoins=[[NSArray alloc]init];
     sortedCoins=[self getSortedCoinTypes];
    
-    /*for (coin in [self.coins allKeys]) {
+    for (coin in [self.coins allKeys]) {
         if (amount - coin.value >= 0){
             int possibleCoinsToGet = amount / coin.value;
             int totalAvailFromThisType = [self.coins[coin] intValue];
@@ -95,9 +95,9 @@
                 amount -= coin.value * totalAvailFromThisType;
             }
         }
-    }*/
+    }
     
-    for(int i=0;i<[sortedCoins count];i++){
+    /*for(int i=0;i<[sortedCoins count];i++){
         coin=[sortedCoins objectAtIndex:i];
         if (amount - coin.value >= 0){
             coin=[sortedCoins objectAtIndex:i];
@@ -116,7 +116,7 @@
             }
         }
         
-    }
+    }*/
     
     
     if (amount==0) {
