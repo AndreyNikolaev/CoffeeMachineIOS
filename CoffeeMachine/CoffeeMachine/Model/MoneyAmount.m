@@ -26,10 +26,11 @@
 
 -(MoneyAmount *)add:(Coin *)c : (int)count {
     
-    NSMutableArray *amount = [[NSMutableArray alloc]init];
-    [amount addObject:[NSNumber numberWithInteger:count]];
-    NSMutableArray *coin = [[NSMutableArray alloc]initWithObjects:c, nil];
-    coins=[[NSMutableDictionary alloc]initWithObjects:amount forKeys:coin];
+    //NSMutableArray *amount = [[NSMutableArray alloc]init];
+    //[amount addObject:[NSNumber numberWithInteger:count]];
+   // NSMutableArray *coin = [[NSMutableArray alloc]initWithObjects:c, nil];
+    //coins=[[NSMutableDictionary alloc]initWithObjects:amount forKeys:coin];
+    [self.coins setObject:[NSNumber numberWithInteger:count] forKey:c];
     
     return self;
 }
@@ -85,8 +86,9 @@
         coin=[sortedCoins objectAtIndex:i];
         if (amount >0 && (amount - coin.value >= 0)){
             int possibleCoinsToGet = amount / coin.value;
-            int totalAvailFromThisType = [self.coins[coin] intValue];
-            
+           int totalAvailFromThisType = [self.coins[coin] intValue];
+           // int totalAvailFromThisType = [ self.coins objectForKey:coin];
+        
             if (totalAvailFromThisType >= possibleCoinsToGet) {
                 [requestedCoins add:coin :possibleCoinsToGet];
                 [self getCoins:coin :possibleCoinsToGet];
