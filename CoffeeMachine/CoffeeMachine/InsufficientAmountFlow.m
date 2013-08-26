@@ -16,6 +16,12 @@
 
 @implementation InsufficientAmountFlow
 
+@synthesize selectedDrink;
+@synthesize coffeeMachineState;
+@synthesize change;
+@synthesize cancelOrderBtn;
+@synthesize makeDrinkBtn;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -38,7 +44,11 @@
 }
 
 - (IBAction)switchToFinalizeFlow:(id)sender {
+    
     OrderFinalizeFlow *orderFinalizeFlow = [[OrderFinalizeFlow alloc]initWithNibName:@"OrderFinalizeFlow" bundle:nil];
+orderFinalizeFlow.coffeeMachineState =self.coffeeMachineState;
+   orderFinalizeFlow.selectedDrink = self.selectedDrink;
+   orderFinalizeFlow.change = self.change;
     [self presentViewController: orderFinalizeFlow animated:YES completion:nil];
 }
 

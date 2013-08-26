@@ -10,6 +10,7 @@
 #import "Drink.h"
 #import "CoffeeMachineState.h"
 #import "MoneyAmount.h"
+#import "InsufficientAmountFlow.h"
 
 @interface OrderFinalizeFlow ()
 
@@ -36,8 +37,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     self.drinkLbl.text=self.selectedDrink.name;
     self.changeLbl.text=change.description;
+   
+  /*  InsufficientAmountFlow *insufficientFlow = [[InsufficientAmountFlow alloc]init];
+    if(insufficientFlow.cancelOrderBtn.isTouchInside){
+
+        self.drinkLbl.text = @"";
+        self.changeLbl.text = @"";
+    }
+    */
     // Do any additional setup after loading the view from its nib.
 }
 
