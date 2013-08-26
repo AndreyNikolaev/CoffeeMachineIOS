@@ -60,18 +60,8 @@
 -(NSArray*)getSortedCoinTypes{
 
     NSMutableArray *availableCoinTypes = [[NSMutableArray alloc]initWithArray:[coins allKeys]];
-    /*[availableCoinTypes sortedArrayUsingSelector:@selector(compare)];
-    return availableCoinTypes;
-    availableCoinTypes = [[NSMutableArray alloc]initWithArray:[coins allKeys]];
-    
-    [availableCoinTypes sortedArrayUsingSelector:@selector(value)];
-    //NSLog(@"array: %@", [availableCoinTypes description]);
-   // NSArray *sortedArray = [availableCoinTypes sortedArrayUsingSelector:@selector(integerValue)];
-    //Lets print the sorted Array
-
-    
-   NSLog(@"array=%@",availableCoinTypes);*/
-       
+    availableCoinTypes=[availableCoinTypes sortedArrayUsingSelector:@selector(compare:)];
+    //NSLog(@"Sorted Array: %@", [availableCoinTypes description]);
     return availableCoinTypes;
 }
 
@@ -148,8 +138,14 @@
     return [coins setObject:[NSNumber numberWithInteger:totalCount] forKey:(id)coin];
 }
 
--(NSString*)description {
-       return [NSString stringWithFormat:@"coin: %@", self.coins];
+-(NSString*)description { //may not work fine !!!
+    NSString* stringCoins=[[NSString alloc]init];
+    Coin* coin=[[Coin alloc]init];
+    for(coin in [self.coins allKeys]){
+        stringCoins=[stringCoins stringByAppendingString:[NSString stringWithFormat:@"%d st X %@",coin.value, [ NSString stringWithFormat:@"%@", [self.coins valueForKey:[NSString stringWithFormat:@"%d", coin.value]] ]]];
+        
+    }
+       return stringCoins;
 }
 
 -(int)sumOfCoins

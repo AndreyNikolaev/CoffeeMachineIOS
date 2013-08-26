@@ -108,7 +108,6 @@
             orderFinalizeFlow.coffeeMachineState=self.coffeeMachineState;
             orderFinalizeFlow.selectedDrink=self.selectedDrink;
             orderFinalizeFlow.change=[self.coffeeMachineState.coins withdraw:test].change;
-            orderFinalizeFlow.drinkLbl.text=selectedDrink.name;
             [self presentViewController:orderFinalizeFlow animated:YES completion:nil];
         }
         else{
