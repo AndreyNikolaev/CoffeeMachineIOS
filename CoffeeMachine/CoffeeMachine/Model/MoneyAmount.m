@@ -16,7 +16,8 @@
 {
     self = [super init];
     if (self) {
-    self.coins = [NSMutableDictionary dictionary];
+    //self.coins = [NSMutableDictionary dictionary];
+        self.coins=[[NSMutableDictionary alloc]init];
     }
     return self;
 }
@@ -25,13 +26,7 @@
 
 
 -(MoneyAmount *)add:(Coin *)c : (int)count {
-    
-    NSMutableArray *amount = [[NSMutableArray alloc]init];
-    [amount addObject:[NSNumber numberWithInteger:count]];
-    NSMutableArray *coin = [[NSMutableArray alloc]initWithObjects:c, nil];
-    coins=[[NSMutableDictionary alloc]initWithObjects:amount forKeys:coin];
-    
-    return self;
+ 
 }
 -(MoneyAmount *)add:(MoneyAmount*)mAmount {
     
@@ -61,12 +56,9 @@
     
     NSMutableArray *availableCoinTypes = [[NSMutableArray alloc]initWithArray:[coins allKeys]];
     availableCoinTypes=[availableCoinTypes sortedArrayUsingSelector:@selector(compare:)];
-<<<<<<< HEAD
+
    availableCoinTypes=[[availableCoinTypes reverseObjectEnumerator] allObjects];
     NSLog(@"Sorted Array: %@", [availableCoinTypes description]);
-=======
-    availableCoinTypes=[[availableCoinTypes reverseObjectEnumerator] allObjects];
->>>>>>> 1458586cf79405cfe5c98540616cc73c29423748
     return availableCoinTypes;
 }
 
