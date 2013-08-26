@@ -58,21 +58,19 @@
 
 
 -(NSArray*)getSortedCoinTypes{
-    
-<<<<<<< HEAD
+
     NSMutableArray *availableCoinTypes = [[NSMutableArray alloc]initWithArray:[coins allKeys]];
-    [availableCoinTypes sortedArrayUsingSelector:@selector(compare)];
+    /*[availableCoinTypes sortedArrayUsingSelector:@selector(compare)];
     return availableCoinTypes;
-=======
-    NSArray *availableCoinTypes = [[NSMutableArray alloc]initWithArray:coins.allKeys];
+    availableCoinTypes = [[NSMutableArray alloc]initWithArray:[coins allKeys]];
     
     [availableCoinTypes sortedArrayUsingSelector:@selector(value)];
     //NSLog(@"array: %@", [availableCoinTypes description]);
    // NSArray *sortedArray = [availableCoinTypes sortedArrayUsingSelector:@selector(integerValue)];
     //Lets print the sorted Array
->>>>>>> 0c07d49da5c8c9a291be1af3c8ce17f891f58d00
+
     
-   NSLog(@"array=%@",availableCoinTypes);
+   NSLog(@"array=%@",availableCoinTypes);*/
        
     return availableCoinTypes;
 }
@@ -90,7 +88,8 @@
     Coin* coin=[[Coin alloc]init];
     NSArray* sortedCoins=[[NSArray alloc]init];
     sortedCoins=[self getSortedCoinTypes];
-    for (coin in [self.coins allKeys]) {
+   
+    /*for (coin in [self.coins allKeys]) {
         if (amount - coin.value >= 0){
             int possibleCoinsToGet = amount / coin.value;
             int totalAvailFromThisType = [self.coins[coin] intValue];
@@ -106,9 +105,9 @@
                 amount -= coin.value * totalAvailFromThisType;
             }
         }
-    }
+    }*/
     
-    /*for(int i=0;i<[sortedCoins count];i++){
+    for(int i=0;i<[sortedCoins count];i++){
         coin=[sortedCoins objectAtIndex:i];
         if (amount - coin.value >= 0){
             coin=[sortedCoins objectAtIndex:i];
@@ -127,7 +126,7 @@
             }
         }
         
-    }*/
+    }
     
     
     if (amount==0) {

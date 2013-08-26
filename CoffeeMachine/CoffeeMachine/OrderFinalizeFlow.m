@@ -7,6 +7,9 @@
 //
 
 #import "OrderFinalizeFlow.h"
+#import "Drink.h"
+#import "CoffeeMachineState.h"
+#import "MoneyAmount.h"
 
 @interface OrderFinalizeFlow ()
 
@@ -17,6 +20,8 @@
 @synthesize selectedDrink;
 @synthesize change;
 @synthesize coffeeMachineState;
+//@synthesize  drinkLbl;
+//@synthesize changeLbl;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
