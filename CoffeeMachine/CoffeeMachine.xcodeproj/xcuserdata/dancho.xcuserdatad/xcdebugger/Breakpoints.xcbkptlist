@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "CoffeeMachine/Model/MoneyAmount.m"
-         timestampString = "399209248.769302"
+         timestampString = "399210925.42301"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "71"
-         endingLineNumber = "71"
+         startingLineNumber = "62"
+         endingLineNumber = "62"
          landmarkName = "-getSortedCoinTypes"
          landmarkType = "5">
       </FileBreakpoint>

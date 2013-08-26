@@ -26,18 +26,9 @@
 
 
 -(MoneyAmount *)add:(Coin *)c : (int)count {
-<<<<<<< HEAD
- 
-=======
-    
-    //NSMutableArray *amount = [[NSMutableArray alloc]init];
-    //[amount addObject:[NSNumber numberWithInteger:count]];
-   // NSMutableArray *coin = [[NSMutableArray alloc]initWithObjects:c, nil];
-    //coins=[[NSMutableDictionary alloc]initWithObjects:amount forKeys:coin];
     [self.coins setObject:[NSNumber numberWithInteger:count] forKey:c];
-    
     return self;
->>>>>>> 6f2398c24023658872e0b4dd728908b3b1d5e25f
+
 }
 -(MoneyAmount *)add:(MoneyAmount*)mAmount {
     
