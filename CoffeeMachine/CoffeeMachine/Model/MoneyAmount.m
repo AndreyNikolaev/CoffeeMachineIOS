@@ -82,7 +82,7 @@
         coin=[sortedCoins objectAtIndex:i];
         if (amount >0 && (amount - coin.value >= 0)){
             int possibleCoinsToGet = amount / coin.value;
-           int totalAvailFromThisType = [self.coins[coin] intValue];
+           int totalAvailFromThisType = [self.coins[coin] integerValue];
            // int totalAvailFromThisType = [ self.coins objectForKey:coin];
         
             if (totalAvailFromThisType >= possibleCoinsToGet) {
@@ -123,7 +123,7 @@
     Coin* coin=[[Coin alloc]init];
     for(coin in [self.coins allKeys]){
         stringCoins=[stringCoins stringByAppendingString:[NSString stringWithFormat:@"%dst X ",coin.value]];
-        stringCoins=[stringCoins stringByAppendingString:[NSString stringWithFormat: @"%d; ",[self.coins[coin] intValue]]];
+        stringCoins=[stringCoins stringByAppendingString:[NSString stringWithFormat: @"%d; ",[self.coins[coin] integerValue]]];
         
     }
        return stringCoins;
