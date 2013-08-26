@@ -41,9 +41,7 @@
 {
     [super viewDidLoad];
     
-    self.drinkLbl.text=self.selectedDrink.name;
-    self.changeLbl.text=change.description;
-
+    self.updateCoffeeMachineState;
     // Do any additional setup after loading the view from its nib.
 }
 
