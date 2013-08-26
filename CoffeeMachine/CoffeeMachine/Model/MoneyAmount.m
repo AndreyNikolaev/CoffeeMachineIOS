@@ -59,17 +59,14 @@
 
 -(NSArray*)getSortedCoinTypes{
     
-
-   /* NSMutableArray *availableCoinTypes = [[NSMutableArray alloc]initWithArray:[coins allKeys]];
-       NSSortDescriptor *sortDescriptor;
-    sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"length" ascending:NO];
-    NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
-     [availableCoinTypes sortUsingDescriptors:sortDescriptors];
-*/
     NSMutableArray *availableCoinTypes = [[NSMutableArray alloc]initWithArray:[coins allKeys]];
     availableCoinTypes=[availableCoinTypes sortedArrayUsingSelector:@selector(compare:)];
+<<<<<<< HEAD
    availableCoinTypes=[[availableCoinTypes reverseObjectEnumerator] allObjects];
     NSLog(@"Sorted Array: %@", [availableCoinTypes description]);
+=======
+    availableCoinTypes=[[availableCoinTypes reverseObjectEnumerator] allObjects];
+>>>>>>> 1458586cf79405cfe5c98540616cc73c29423748
     return availableCoinTypes;
 }
 
@@ -87,7 +84,7 @@
     NSArray* sortedCoins=[[NSArray alloc]init];
     sortedCoins=[self getSortedCoinTypes];
    
-    /*for (coin in [self.coins allKeys]) {
+    for (coin in [self.coins allKeys]) {
         if (amount - coin.value >= 0){
             int possibleCoinsToGet = amount / coin.value;
             int totalAvailFromThisType = [self.coins[coin] intValue];
@@ -103,9 +100,9 @@
                 amount -= coin.value * totalAvailFromThisType;
             }
         }
-    }*/
+    }
     
-    for(int i=0;i<[sortedCoins count];i++){
+    /*for(int i=0;i<[sortedCoins count];i++){
         coin=[sortedCoins objectAtIndex:i];
         if (amount - coin.value >= 0){
             coin=[sortedCoins objectAtIndex:i];
@@ -124,7 +121,7 @@
             }
         }
         
-    }
+    }*/
     
     
     if (amount==0) {
@@ -150,7 +147,8 @@
     NSString* stringCoins=[[NSString alloc]init];
     Coin* coin=[[Coin alloc]init];
     for(coin in [self.coins allKeys]){
-        stringCoins=[stringCoins stringByAppendingString:[NSString stringWithFormat:@"%d st X %@",coin.value, [ NSString stringWithFormat:@"%@", [self.coins valueForKey:[NSString stringWithFormat:@"%d", coin.value]] ]]];
+        stringCoins=[stringCoins stringByAppendingString:[NSString stringWithFormat:@"%dst X ",coin.value]];
+        stringCoins=[stringCoins stringByAppendingString:[NSString stringWithFormat: @"%d; ",[self.coins[coin] intValue]]];
         
     }
        return stringCoins;

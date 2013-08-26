@@ -103,7 +103,7 @@
     if( userCoins.sumOfCoins >= selectedDrink.price){
         int test = [userCoins sumOfCoins] - selectedDrink.price;
         if([coffeeMachineState.coins withdraw:test].status== SUCCESSFUL){
-        
+            
             OrderFinalizeFlow *orderFinalizeFlow=[[OrderFinalizeFlow alloc]initWithNibName:@"OrderFinalizeFlow" bundle:nil];
             orderFinalizeFlow.coffeeMachineState=self.coffeeMachineState;
             orderFinalizeFlow.selectedDrink=self.selectedDrink;
