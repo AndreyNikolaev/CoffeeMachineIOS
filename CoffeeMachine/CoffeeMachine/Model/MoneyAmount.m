@@ -59,17 +59,9 @@
 
 -(NSArray*)getSortedCoinTypes{
     
-
-   /* NSMutableArray *availableCoinTypes = [[NSMutableArray alloc]initWithArray:[coins allKeys]];
-       NSSortDescriptor *sortDescriptor;
-    sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"length" ascending:NO];
-    NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
-     [availableCoinTypes sortUsingDescriptors:sortDescriptors];
-*/
     NSMutableArray *availableCoinTypes = [[NSMutableArray alloc]initWithArray:[coins allKeys]];
     availableCoinTypes=[availableCoinTypes sortedArrayUsingSelector:@selector(compare:)];
     availableCoinTypes=[[availableCoinTypes reverseObjectEnumerator] allObjects];
-    NSLog(@"Sorted Array: %@", [availableCoinTypes description]);
     return availableCoinTypes;
 }
 
@@ -150,7 +142,8 @@
     NSString* stringCoins=[[NSString alloc]init];
     Coin* coin=[[Coin alloc]init];
     for(coin in [self.coins allKeys]){
-        stringCoins=[stringCoins stringByAppendingString:[NSString stringWithFormat:@"%dst X %@",coin.value, [ NSString stringWithFormat:@"%@", [self.coins valueForKey:[NSString stringWithFormat:@"%d", coin.value]] ]]];
+        stringCoins=[stringCoins stringByAppendingString:[NSString stringWithFormat:@"%dst X ",coin.value]];
+        stringCoins=[stringCoins stringByAppendingString:[NSString stringWithFormat: @"%d; ",[self.coins[coin] intValue]]];
         
     }
        return stringCoins;
