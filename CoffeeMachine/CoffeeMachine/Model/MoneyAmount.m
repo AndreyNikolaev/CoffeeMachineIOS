@@ -80,29 +80,10 @@
     Coin* coin=[[Coin alloc]init];
     NSArray* sortedCoins=[[NSArray alloc]init];
     sortedCoins=[self getSortedCoinTypes];
-   
-    for (coin in [self.coins allKeys]) {
-        if (amount - coin.value >= 0){
-            int possibleCoinsToGet = amount / coin.value;
-            int totalAvailFromThisType = [self.coins[coin] intValue];
-            
-            if (totalAvailFromThisType >= possibleCoinsToGet) {
-                [requestedCoins add:coin :possibleCoinsToGet];
-                [self getCoins:coin :possibleCoinsToGet];
-                amount-=coin.value*possibleCoinsToGet;
-                
-            } else if(totalAvailFromThisType < possibleCoinsToGet){
-                [requestedCoins add:coin :totalAvailFromThisType];
-                [self getCoins:coin :totalAvailFromThisType];
-                amount -= coin.value * totalAvailFromThisType;
-            }
-        }
-    }
     
-    /*for(int i=0;i<[sortedCoins count];i++){
+    for(int i=0;i<[sortedCoins count];i++){
         coin=[sortedCoins objectAtIndex:i];
-        if (amount - coin.value >= 0){
-            coin=[sortedCoins objectAtIndex:i];
+        if (amount >0 && (amount - coin.value >= 0)){
             int possibleCoinsToGet = amount / coin.value;
             int totalAvailFromThisType = [self.coins[coin] intValue];
             
@@ -118,7 +99,7 @@
             }
         }
         
-    }*/
+    }
     
     
     if (amount==0) {
@@ -133,11 +114,10 @@
 }
 -(void)getCoins:(Coin *)coin :(int)count{
     int availableCoins=[self.coins[coin] intValue];
-    if(availableCoins < count){
-        
+    if(availableCoins > count){
+        int totalCount = availableCoins - count;
+        [self.coins setObject:[NSNumber numberWithInteger:totalCount] forKey:(id)coin];
     }
-    int totalCount = availableCoins - count;
-    return [coins setObject:[NSNumber numberWithInteger:totalCount] forKey:(id)coin];
 }
 
 -(NSString*)description { //may not work fine !!!
