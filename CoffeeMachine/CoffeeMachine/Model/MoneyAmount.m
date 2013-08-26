@@ -58,10 +58,18 @@
 
 
 -(NSArray*)getSortedCoinTypes{
+    
 
+   /* NSMutableArray *availableCoinTypes = [[NSMutableArray alloc]initWithArray:[coins allKeys]];
+       NSSortDescriptor *sortDescriptor;
+    sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"length" ascending:NO];
+    NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
+     [availableCoinTypes sortUsingDescriptors:sortDescriptors];
+*/
     NSMutableArray *availableCoinTypes = [[NSMutableArray alloc]initWithArray:[coins allKeys]];
     availableCoinTypes=[availableCoinTypes sortedArrayUsingSelector:@selector(compare:)];
-    //NSLog(@"Sorted Array: %@", [availableCoinTypes description]);
+    availableCoinTypes=[[availableCoinTypes reverseObjectEnumerator] allObjects];
+    NSLog(@"Sorted Array: %@", [availableCoinTypes description]);
     return availableCoinTypes;
 }
 
