@@ -11,6 +11,7 @@
 #import "Withdraw.h"
 
 @implementation MoneyAmount
+
 @synthesize coins;
 -(id)init
 {
@@ -26,7 +27,16 @@
 
 
 -(MoneyAmount *)add:(Coin *)c : (int)count {
+<<<<<<< HEAD
     [self.coins setObject:[NSNumber numberWithInteger:count] forKey:c];
+=======
+    
+    //NSMutableArray *amount = [[NSMutableArray alloc]init];
+    //[amount addObject:[NSNumber numberWithInteger:count]];
+   // NSMutableArray *coin = [[NSMutableArray alloc]initWithObjects:c, nil];
+    //coins=[[NSMutableDictionary alloc]initWithObjects:amount forKeys:coin];
+        [self.coins setObject:[NSNumber numberWithInteger:count] forKey:c];
+>>>>>>> 9b1b479900947a796003758658b3979cd7e289a9
     return self;
 
 }
@@ -60,7 +70,12 @@
     availableCoinTypes=[availableCoinTypes sortedArrayUsingSelector:@selector(compare:)];
 
    availableCoinTypes=[[availableCoinTypes reverseObjectEnumerator] allObjects];
+<<<<<<< HEAD
      return availableCoinTypes;
+=======
+   // NSLog(@"Sorted Array: %@", [availableCoinTypes description]);
+    return availableCoinTypes;
+>>>>>>> 9b1b479900947a796003758658b3979cd7e289a9
 }
 
 -(Withdraw *)withdraw:(int)amount {
@@ -120,9 +135,10 @@
     NSString* stringCoins=[[NSString alloc]init];
     Coin* coin=[[Coin alloc]init];
     for(coin in [self.coins allKeys]){
-        stringCoins=[stringCoins stringByAppendingString:[NSString stringWithFormat:@"%dst X ",coin.value]];
-        stringCoins=[stringCoins stringByAppendingString:[NSString stringWithFormat: @"%d; ",[self.coins[coin] integerValue]]];
+    //stringCoins=[stringCoins stringByAppendingString:[NSString stringWithFormat:@"%dst X ",coin.value]];
         
+    //stringCoins=[stringCoins stringByAppendingString:[NSString stringWithFormat: @"%@; ",coins[coin]]];
+stringCoins=[stringCoins stringByAppendingString:[NSString stringWithFormat:@"%dst X %d ",coin.value, [self.coins[coin] intValue]]];
     }
        return stringCoins;
 }
