@@ -21,6 +21,9 @@
 @synthesize selectedDrink;
 @synthesize change;
 @synthesize coffeeMachineState;
+@synthesize userCoins;
+@synthesize willGetDrink;
+
 @synthesize  drinkLbl;
 @synthesize changeLbl;
 
@@ -40,14 +43,7 @@
     
     self.drinkLbl.text=self.selectedDrink.name;
     self.changeLbl.text=change.description;
-   
-  /*  InsufficientAmountFlow *insufficientFlow = [[InsufficientAmountFlow alloc]init];
-    if(insufficientFlow.cancelOrderBtn.isTouchInside){
 
-        self.drinkLbl.text = @"";
-        self.changeLbl.text = @"";
-    }
-    */
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -57,4 +53,17 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)updateCoffeeMachineState{
+    if(willGetDrink){
+       self.drinkLbl.text = self.selectedDrink.name;
+       self.changeLbl.text = change.description;
+        [coffeeMachineState.coins add:userCoins];
+    }
+    else {
+        self.drinkLbl.text=@"Take your money";
+        self.changeLbl.text=userCoins.description;
+        [coffeeMachineState.coins add:change];
+    }
+    
+}
 @end

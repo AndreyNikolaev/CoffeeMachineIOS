@@ -21,6 +21,8 @@
 @synthesize change;
 @synthesize cancelOrderBtn;
 @synthesize makeDrinkBtn;
+@synthesize userCoins;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -46,20 +48,23 @@
 - (IBAction)switchToFinalizeFlow:(id)sender {
     
     OrderFinalizeFlow *orderFinalizeFlow = [[OrderFinalizeFlow alloc]initWithNibName:@"OrderFinalizeFlow" bundle:nil];
-orderFinalizeFlow.coffeeMachineState =self.coffeeMachineState;
-   orderFinalizeFlow.selectedDrink = self.selectedDrink;
-   orderFinalizeFlow.change = self.change;
+    orderFinalizeFlow.coffeeMachineState =self.coffeeMachineState;
+    orderFinalizeFlow.selectedDrink = self.selectedDrink;
+    orderFinalizeFlow.change = self.change;
+    orderFinalizeFlow.userCoins=self.userCoins;
+    orderFinalizeFlow.willGetDrink=YES;
     [self presentViewController: orderFinalizeFlow animated:YES completion:nil];
 }
 
 - (IBAction)switchToDrinkListFlow:(id)sender {
-    ViewController *drinkListFlow = [[ViewController alloc]initWithNibName:@"ViewController" bundle:nil];
-    //drinkListFlow.title = @"Coffee Machine";
-    [self presentViewController:drinkListFlow animated:YES completion:nil];
-    
+    OrderFinalizeFlow *orderFinalizeFlow = [[OrderFinalizeFlow alloc]initWithNibName:@"OrderFinalizeFlow" bundle:nil];
+    orderFinalizeFlow.coffeeMachineState =self.coffeeMachineState;
+    orderFinalizeFlow.selectedDrink = self.selectedDrink;
+    orderFinalizeFlow.change = self.change;
+    orderFinalizeFlow.userCoins=self.userCoins;
+    orderFinalizeFlow.willGetDrink=NO;
+    [self presentViewController: orderFinalizeFlow animated:YES completion:nil];
 }
-
-
 
 @end
 

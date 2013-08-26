@@ -18,6 +18,10 @@
 
 @property Drink* selectedDrink;
 @property MoneyAmount* change;
+@property MoneyAmount* userCoins;
 @property CoffeeMachineState* coffeeMachineState;
+@property BOOL willGetDrink;
+
+-(void)updateCoffeeMachineState;
 
 @end

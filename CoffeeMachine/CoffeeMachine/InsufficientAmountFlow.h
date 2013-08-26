@@ -22,6 +22,7 @@
 @property Drink* selectedDrink;
 @property MoneyAmount* change;
 @property CoffeeMachineState* coffeeMachineState;
+@property MoneyAmount* userCoins;
 
 
 @end

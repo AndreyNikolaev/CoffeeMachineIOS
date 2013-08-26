@@ -104,14 +104,20 @@
         int test = [userCoins sumOfCoins] - selectedDrink.price;
         if([coffeeMachineState.coins withdraw:test].status== SUCCESSFUL){
             
-            OrderFinalizeFlow *orderFinalizeFlow=[[OrderFinalizeFlow alloc]initWithNibName:@"OrderFinalizeFlow" bundle:nil];
-            orderFinalizeFlow.coffeeMachineState=self.coffeeMachineState;
-            orderFinalizeFlow.selectedDrink=self.selectedDrink;
-            orderFinalizeFlow.change=[self.coffeeMachineState.coins withdraw:test].change;
+            OrderFinalizeFlow *orderFinalizeFlow =[ [OrderFinalizeFlow alloc]initWithNibName:@"OrderFinalizeFlow" bundle:nil];
+            orderFinalizeFlow.coffeeMachineState = self.coffeeMachineState;
+            orderFinalizeFlow.selectedDrink = self.selectedDrink;
+            orderFinalizeFlow.change = [self.coffeeMachineState.coins withdraw:test].change;
+            orderFinalizeFlow.userCoins = self.userCoins;
+            orderFinalizeFlow.willGetDrink = YES;
             [self presentViewController:orderFinalizeFlow animated:YES completion:nil];
         }
         else{
             InsufficientAmountFlow *insAmountFlow=[[InsufficientAmountFlow alloc]initWithNibName:@"InsufficientAmountFlow" bundle:nil];
+            insAmountFlow.coffeeMachineState = self.coffeeMachineState;
+            insAmountFlow.selectedDrink = self.selectedDrink;
+            insAmountFlow.change = [self.coffeeMachineState.coins withdraw:test].change;
+            insAmountFlow.userCoins = self.userCoins;
             [self presentViewController:insAmountFlow animated:YES completion:nil];
         }
         

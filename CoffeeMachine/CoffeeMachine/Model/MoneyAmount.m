@@ -60,8 +60,7 @@
     availableCoinTypes=[availableCoinTypes sortedArrayUsingSelector:@selector(compare:)];
 
    availableCoinTypes=[[availableCoinTypes reverseObjectEnumerator] allObjects];
-    NSLog(@"Sorted Array: %@", [availableCoinTypes description]);
-    return availableCoinTypes;
+     return availableCoinTypes;
 }
 
 -(Withdraw *)withdraw:(int)amount {
@@ -83,8 +82,7 @@
         if (amount >0 && (amount - coin.value >= 0)){
             int possibleCoinsToGet = amount / coin.value;
            int totalAvailFromThisType = [self.coins[coin] integerValue];
-           // int totalAvailFromThisType = [ self.coins objectForKey:coin];
-        
+                  
             if (totalAvailFromThisType >= possibleCoinsToGet) {
                 [requestedCoins add:coin :possibleCoinsToGet];
                 [self getCoins:coin :possibleCoinsToGet];
