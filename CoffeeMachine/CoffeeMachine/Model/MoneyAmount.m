@@ -142,7 +142,7 @@
     NSString* stringCoins=[[NSString alloc]init];
     Coin* coin=[[Coin alloc]init];
     for(coin in [self.coins allKeys]){
-        stringCoins=[stringCoins stringByAppendingString:[NSString stringWithFormat:@"%d st X %@",coin.value, [ NSString stringWithFormat:@"%@", [self.coins valueForKey:[NSString stringWithFormat:@"%d", coin.value]] ]]];
+        stringCoins=[stringCoins stringByAppendingString:[NSString stringWithFormat:@"%dst X %@",coin.value, [ NSString stringWithFormat:@"%@", [self.coins valueForKey:[NSString stringWithFormat:@"%d", coin.value]] ]]];
         
     }
        return stringCoins;
