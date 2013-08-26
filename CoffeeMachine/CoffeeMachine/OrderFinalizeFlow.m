@@ -7,6 +7,9 @@
 //
 
 #import "OrderFinalizeFlow.h"
+#import "Drink.h"
+#import "CoffeeMachineState.h"
+#import "MoneyAmount.h"
 
 @interface OrderFinalizeFlow ()
 
@@ -22,10 +25,11 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+//Custom initialization
     }
     return self;
 }
+ 
 
 - (void)viewDidLoad
 {
