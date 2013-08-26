@@ -61,12 +61,9 @@
     
     NSMutableArray *availableCoinTypes = [[NSMutableArray alloc]initWithArray:[coins allKeys]];
     availableCoinTypes=[availableCoinTypes sortedArrayUsingSelector:@selector(compare:)];
-<<<<<<< HEAD
+
    availableCoinTypes=[[availableCoinTypes reverseObjectEnumerator] allObjects];
     NSLog(@"Sorted Array: %@", [availableCoinTypes description]);
-=======
-    availableCoinTypes=[[availableCoinTypes reverseObjectEnumerator] allObjects];
->>>>>>> 1458586cf79405cfe5c98540616cc73c29423748
     return availableCoinTypes;
 }
 
