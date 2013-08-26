@@ -13,7 +13,7 @@
 @interface Coin : NSObject<NSCopying>
 
 @property int value;
-
+- (NSComparisonResult)compare:(Coin *)otherObject;
 
 
 @end

@@ -37,6 +37,8 @@
 {
     return [self copy];
 }
-
+- (NSComparisonResult)compare:(Coin *)otherObject{
+    return [[NSNumber numberWithInt:self.value] compare:[NSNumber numberWithInt:otherObject.value]];
+}
 
 @end

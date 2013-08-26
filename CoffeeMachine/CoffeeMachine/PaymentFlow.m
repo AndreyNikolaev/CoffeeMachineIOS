@@ -74,32 +74,32 @@
 - (IBAction)sumFive:(id)sender {
  
     [self setCoinInUserCoins:5];
-    [self checkTheSum];
+    [self switchMenu];
 }
 
 - (IBAction)sumTen:(id)sender {
     
    [self setCoinInUserCoins:10];
-    [self checkTheSum];
+    [self switchMenu];
 }
 
 - (IBAction)sumTwenty:(id)sender {
         
    [self setCoinInUserCoins:20];
-    [self checkTheSum];
+    [self switchMenu];
 }
 
 - (IBAction)sumFifty:(id)sender {
    [self setCoinInUserCoins:50];
-   [self checkTheSum];
+   [self switchMenu];
 }
 
 - (IBAction)sumLev:(id)sender {
     [self setCoinInUserCoins:100];
-    [self checkTheSum];
+    [self switchMenu];
 }
 
-- (void) checkTheSum {  //BAD NAME
+- (void) switchMenu {  //BAD NAME
     if( userCoins.sumOfCoins >= selectedDrink.price){
         int test = [userCoins sumOfCoins] - selectedDrink.price;
         if([coffeeMachineState.coins withdraw:test].status== SUCCESSFUL){

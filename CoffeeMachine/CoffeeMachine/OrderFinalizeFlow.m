@@ -20,6 +20,8 @@
 @synthesize selectedDrink;
 @synthesize change;
 @synthesize coffeeMachineState;
+@synthesize  drinkLbl;
+@synthesize changeLbl;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -34,6 +36,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.drinkLbl.text=self.selectedDrink.name;
+    self.changeLbl.text=change.description;
     // Do any additional setup after loading the view from its nib.
 }
 

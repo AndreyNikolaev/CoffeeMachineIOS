@@ -58,6 +58,7 @@
 
 
 -(NSArray*)getSortedCoinTypes{
+<<<<<<< HEAD
     
 
     NSMutableArray *availableCoinTypes = [[NSMutableArray alloc]initWithArray:[coins allKeys]];
@@ -74,6 +75,12 @@
     
    NSLog(@"array=%@",availableCoinTypes);
        */
+=======
+
+    NSMutableArray *availableCoinTypes = [[NSMutableArray alloc]initWithArray:[coins allKeys]];
+    availableCoinTypes=[availableCoinTypes sortedArrayUsingSelector:@selector(compare:)];
+    //NSLog(@"Sorted Array: %@", [availableCoinTypes description]);
+>>>>>>> 4141c25065327948e4faca07b04a886a7c99ad79
     return availableCoinTypes;
 }
 
@@ -90,7 +97,8 @@
     Coin* coin=[[Coin alloc]init];
     NSArray* sortedCoins=[[NSArray alloc]init];
     sortedCoins=[self getSortedCoinTypes];
-    for (coin in [self.coins allKeys]) {
+   
+    /*for (coin in [self.coins allKeys]) {
         if (amount - coin.value >= 0){
             int possibleCoinsToGet = amount / coin.value;
             int totalAvailFromThisType = [self.coins[coin] intValue];
@@ -106,9 +114,9 @@
                 amount -= coin.value * totalAvailFromThisType;
             }
         }
-    }
+    }*/
     
-    /*for(int i=0;i<[sortedCoins count];i++){
+    for(int i=0;i<[sortedCoins count];i++){
         coin=[sortedCoins objectAtIndex:i];
         if (amount - coin.value >= 0){
             coin=[sortedCoins objectAtIndex:i];
@@ -127,7 +135,7 @@
             }
         }
         
-    }*/
+    }
     
     
     if (amount==0) {
@@ -149,8 +157,14 @@
     return [coins setObject:[NSNumber numberWithInteger:totalCount] forKey:(id)coin];
 }
 
--(NSString*)description {
-       return [NSString stringWithFormat:@"coin: %@", self.coins];
+-(NSString*)description { //may not work fine !!!
+    NSString* stringCoins=[[NSString alloc]init];
+    Coin* coin=[[Coin alloc]init];
+    for(coin in [self.coins allKeys]){
+        stringCoins=[stringCoins stringByAppendingString:[NSString stringWithFormat:@"%d st X %@",coin.value, [ NSString stringWithFormat:@"%@", [self.coins valueForKey:[NSString stringWithFormat:@"%d", coin.value]] ]]];
+        
+    }
+       return stringCoins;
 }
 
 -(int)sumOfCoins
