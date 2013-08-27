@@ -112,7 +112,8 @@
             orderFinalizeFlow.change = withdraw.change;
             orderFinalizeFlow.userCoins = self.userCoins;
             orderFinalizeFlow.willGetDrink = YES;
-            [self presentViewController:orderFinalizeFlow animated:YES completion:nil];
+//            [self presentViewController:orderFinalizeFlow animated:YES completion:nil];
+            [self.navigationController pushViewController:orderFinalizeFlow animated:YES];
         }
         else{
             InsufficientAmountFlow *insAmountFlow=[[InsufficientAmountFlow alloc]initWithNibName:@"InsufficientAmountFlow" bundle:nil];
@@ -120,7 +121,8 @@
             insAmountFlow.selectedDrink = self.selectedDrink;
             insAmountFlow.change = withdraw.change;
             insAmountFlow.userCoins = self.userCoins;
-            [self presentViewController:insAmountFlow animated:YES completion:nil];
+            //[self presentViewController:insAmountFlow animated:YES completion:nil];
+            [self.navigationController pushViewController: insAmountFlow animated:YES];
         }
         
       
