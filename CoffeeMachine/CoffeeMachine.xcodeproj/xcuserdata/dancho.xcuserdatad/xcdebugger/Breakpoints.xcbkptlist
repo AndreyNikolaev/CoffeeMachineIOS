@@ -67,19 +67,6 @@
          endingLineNumber = "16">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "CoffeeMachine/Model/MoneyAmount.m"
-         timestampString = "399216056.269843"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "32"
-         endingLineNumber = "32"
-         landmarkName = "-add::"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
@@ -123,24 +110,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "CoffeeMachine/Model/MoneyAmount.m"
-         timestampString = "399217305.587064"
+         timestampString = "399281354.548941"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "97"
-         endingLineNumber = "97"
-         landmarkName = "-withdraw:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "CoffeeMachine/Model/MoneyAmount.m"
-         timestampString = "399217312.627529"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "102"
-         endingLineNumber = "102"
+         startingLineNumber = "81"
+         endingLineNumber = "81"
          landmarkName = "-withdraw:"
          landmarkType = "5">
       </FileBreakpoint>
