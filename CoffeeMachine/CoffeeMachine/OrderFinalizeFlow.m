@@ -67,15 +67,7 @@
 }
 
 - (IBAction)backToDrinkListFlow:(id)sender {
-    /*
-    ViewController *vc = [[ViewController alloc]initWithNibName:@"ViewController"bundle:nil ];
-    self.navigationItem.title = @"test";
-    
-    //[self presentViewController:vc animated:YES completion:nil];
-    [self.navigationController pushViewController:vc animated:YES];
-   
-    */
-    [self.navigationController popToRootViewControllerAnimated:YES];
+        [self.navigationController popToRootViewControllerAnimated:YES];
 
 }
 @end
