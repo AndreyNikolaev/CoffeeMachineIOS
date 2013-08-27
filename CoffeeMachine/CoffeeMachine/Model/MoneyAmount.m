@@ -87,11 +87,13 @@
     NSArray* sortedCoins=[[NSArray alloc]init];
     sortedCoins=[self getSortedCoinTypes];
     
+    int totalAvailFromThisType = -1;
+    int possibleCoinsToGet =-1;
     for(int i=0;i<[sortedCoins count];i++){
         coin=[sortedCoins objectAtIndex:i];
         if (amount >0 && (amount - coin.value >= 0)){
-            int possibleCoinsToGet = amount / coin.value;
-           int totalAvailFromThisType = [self.coins[coin] integerValue];
+            possibleCoinsToGet = amount / coin.value;
+             totalAvailFromThisType = [self.coins[coin] integerValue];
                   
             if (totalAvailFromThisType >= possibleCoinsToGet) {
                 [requestedCoins add:coin :possibleCoinsToGet];

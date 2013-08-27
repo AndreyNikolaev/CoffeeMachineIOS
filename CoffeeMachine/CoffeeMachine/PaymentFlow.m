@@ -102,12 +102,14 @@
 - (void) switchMenu {  //BAD NAME
     if( userCoins.sumOfCoins >= selectedDrink.price){
         int test = [userCoins sumOfCoins] - selectedDrink.price;
-        if([coffeeMachineState.coins withdraw:test].status== SUCCESSFUL){
+        Withdraw* withdraw = [[Withdraw alloc]init];
+        withdraw = [coffeeMachineState.coins withdraw:test];
+        if(withdraw.status== SUCCESSFUL){
             
             OrderFinalizeFlow *orderFinalizeFlow =[ [OrderFinalizeFlow alloc]initWithNibName:@"OrderFinalizeFlow" bundle:nil];
             orderFinalizeFlow.coffeeMachineState = self.coffeeMachineState;
             orderFinalizeFlow.selectedDrink = self.selectedDrink;
-            orderFinalizeFlow.change = [self.coffeeMachineState.coins withdraw:test].change;
+            orderFinalizeFlow.change = withdraw.change;
             orderFinalizeFlow.userCoins = self.userCoins;
             orderFinalizeFlow.willGetDrink = YES;
 //            [self presentViewController:orderFinalizeFlow animated:YES completion:nil];
@@ -117,7 +119,7 @@
             InsufficientAmountFlow *insAmountFlow=[[InsufficientAmountFlow alloc]initWithNibName:@"InsufficientAmountFlow" bundle:nil];
             insAmountFlow.coffeeMachineState = self.coffeeMachineState;
             insAmountFlow.selectedDrink = self.selectedDrink;
-            insAmountFlow.change = [self.coffeeMachineState.coins withdraw:test].change;
+            insAmountFlow.change = withdraw.change;
             insAmountFlow.userCoins = self.userCoins;
             //[self presentViewController:insAmountFlow animated:YES completion:nil];
             [self.navigationController pushViewController: insAmountFlow animated:YES];

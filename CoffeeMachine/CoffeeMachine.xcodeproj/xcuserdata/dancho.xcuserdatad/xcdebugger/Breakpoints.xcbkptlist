@@ -67,7 +67,6 @@
          endingLineNumber = "16">
       </FileBreakpoint>
       <FileBreakpoint
-<<<<<<< HEAD
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
@@ -81,8 +80,6 @@
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-=======
->>>>>>> 64d8a8b94cfe809776f4d603a02c7d5d13bfa7e0
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
@@ -105,8 +102,8 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "130"
          endingLineNumber = "130"
-         landmarkName = "-description"
-         landmarkType = "5">
+         landmarkName = "@implementation MoneyAmount"
+         landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -126,7 +123,6 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "CoffeeMachine/Model/MoneyAmount.m"
-<<<<<<< HEAD
          timestampString = "399217305.587064"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
@@ -141,13 +137,10 @@
          continueAfterRunningActions = "No"
          filePath = "CoffeeMachine/Model/MoneyAmount.m"
          timestampString = "399217312.627529"
-=======
-         timestampString = "399281354.548941"
->>>>>>> 64d8a8b94cfe809776f4d603a02c7d5d13bfa7e0
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "81"
-         endingLineNumber = "81"
+         startingLineNumber = "102"
+         endingLineNumber = "102"
          landmarkName = "-withdraw:"
          landmarkType = "5">
       </FileBreakpoint>
