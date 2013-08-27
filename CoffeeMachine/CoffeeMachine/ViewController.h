@@ -17,6 +17,8 @@ NSInteger globalPrice;
 
 @property(strong, nonatomic) NSMutableArray *itemsArray;
 @property(strong) CoffeeMachineState *coffeeMachineState;
+@property(strong, nonatomic) UIAlertView *alertView;
+-(IBAction)goToAdministrationFlow:(id)sender;
 
-
+-(void)validateUsernameAndPassword;
 @end

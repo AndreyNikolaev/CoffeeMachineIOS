@@ -12,7 +12,7 @@
 #import "DrinksContainer.h"
 #import "CoffeeMachineState.h"
 #import "MoneyAmount.h"
-
+#import "AdministrationFlow.h"
 
 @interface ViewController ()
 
@@ -25,7 +25,7 @@
 @synthesize itemsArray = _itemsArray;
 @synthesize tableView = _tableView;
 @synthesize coffeeMachineState=_coffeeMachineState;
-
+@synthesize alertView=_alertView;
 
 #pragma mark -
 
@@ -35,7 +35,7 @@
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     self.title = @"Coffee Machine";
-    UIBarButtonItem *adminButton = [[UIBarButtonItem alloc] initWithTitle:@"Admin" style:UIBarButtonItemStyleBordered target:nil action:nil];
+    UIBarButtonItem *adminButton = [[UIBarButtonItem alloc] initWithTitle:@"Admin" style:UIBarButtonItemStyleBordered target:self action:@selector(goToAdministrationFlow:)];
     self.navigationItem.rightBarButtonItem = adminButton;
     
     DrinksContainer *drinks =[[ DrinksContainer alloc]init ];
@@ -117,7 +117,32 @@
     
     
 }
+- (void) alertView:(UIAlertView *)alert clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    //NSLog(@"Login: %@", [[alert textFieldAtIndex:0] text]);
+    //NSLog(@"Password: %@", [[alert textFieldAtIndex:1] text]);
+    NSString *username = @"test";
+    NSString *password = @"pass";
+    if(buttonIndex == 1) {
+    if([[[alert textFieldAtIndex:0]text ]isEqual:username] && [[[alert textFieldAtIndex:1]text ]isEqual:password]) {
+        AdministrationFlow *admin = [[AdministrationFlow alloc]initWithNibName:@"AdministrationFlow" bundle:nil];
+        [self.navigationController pushViewController:admin animated:YES];
+    }else {
+        [_alertView show];
+    }
+    }
+    
+}
+-(void)validateUsernameAndPassword {
+   
+}
+ 
 
-
+-(IBAction)goToAdministrationFlow:(id)sender {
+    UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"Login"message:nil delegate:self cancelButtonTitle: @"cancel"otherButtonTitles:@"Ok", nil];
+    alertView.alertViewStyle = UIAlertViewStyleLoginAndPasswordInput;
+    [self alertView:alertView clickedButtonAtIndex:0];
+    [alertView show];
+}
 
 @end
