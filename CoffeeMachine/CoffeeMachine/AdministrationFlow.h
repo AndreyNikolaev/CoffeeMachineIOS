@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface AdministrationFlow : UIViewController
+@property (strong, nonatomic) IBOutlet UINavigationItem *navigationBar;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 @end
