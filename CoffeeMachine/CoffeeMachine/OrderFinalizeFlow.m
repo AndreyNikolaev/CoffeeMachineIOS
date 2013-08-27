@@ -11,6 +11,7 @@
 #import "CoffeeMachineState.h"
 #import "MoneyAmount.h"
 #import "InsufficientAmountFlow.h"
+#import "ViewController.h"
 
 @interface OrderFinalizeFlow ()
 
@@ -41,7 +42,7 @@
 {
     [super viewDidLoad];
     
-    self.updateCoffeeMachineState;
+    [self updateCoffeeMachineState];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -63,5 +64,18 @@
         [coffeeMachineState.coins add:change];
     }
     
+}
+
+- (IBAction)backToDrinkListFlow:(id)sender {
+    /*
+    ViewController *vc = [[ViewController alloc]initWithNibName:@"ViewController"bundle:nil ];
+    self.navigationItem.title = @"test";
+    
+    //[self presentViewController:vc animated:YES completion:nil];
+    [self.navigationController pushViewController:vc animated:YES];
+   
+    */
+    [self.navigationController popToRootViewControllerAnimated:YES];
+
 }
 @end

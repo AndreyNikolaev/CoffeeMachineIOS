@@ -15,6 +15,7 @@
 @interface OrderFinalizeFlow : UIViewController
 @property (strong, nonatomic) IBOutlet UILabel *drinkLbl;
 @property (strong, nonatomic) IBOutlet UILabel *changeLbl;
+@property (strong, nonatomic) IBOutlet UIButton *backToDrinkList;
 
 @property Drink* selectedDrink;
 @property MoneyAmount* change;
@@ -23,5 +24,6 @@
 @property BOOL willGetDrink;
 
 -(void)updateCoffeeMachineState;
+- (IBAction)backToDrinkListFlow:(id)sender;
 
 @end
