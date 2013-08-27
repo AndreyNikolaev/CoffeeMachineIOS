@@ -93,7 +93,8 @@
         coin=[sortedCoins objectAtIndex:i];
         if (amount >0 && (amount - coin.value >= 0)){
             possibleCoinsToGet = amount / coin.value;
-             totalAvailFromThisType = [self.coins[coin] integerValue];
+             totalAvailFromThisType = [self.coins[coin] intValue];
+            //totalAvailFromThisType = coi
                   
             if (totalAvailFromThisType >= possibleCoinsToGet) {
                 [requestedCoins add:coin :possibleCoinsToGet];

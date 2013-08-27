@@ -35,6 +35,8 @@
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     self.title = @"Coffee Machine";
+    UIBarButtonItem *adminButton = [[UIBarButtonItem alloc] initWithTitle:@"Admin" style:UIBarButtonItemStyleBordered target:nil action:nil];
+    self.navigationItem.rightBarButtonItem = adminButton;
     
     DrinksContainer *drinks =[[ DrinksContainer alloc]init ];
     [drinks setSomeDrinks];
