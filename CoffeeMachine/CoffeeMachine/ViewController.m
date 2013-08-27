@@ -40,11 +40,12 @@
     [drinks setSomeDrinks];
     MoneyAmount *moneyAmount = [[MoneyAmount alloc]init];
     [moneyAmount setSomeCoins];
-    _coffeeMachineState=[[CoffeeMachineState alloc]init];
+    
+    if (self.coffeeMachineState == nil) {
+    self.coffeeMachineState=[[CoffeeMachineState alloc]init];
     [_coffeeMachineState setCurrentDrinksAmount:drinks];
     _coffeeMachineState.coins = moneyAmount;
-    
-  
+    }
     _itemsArray=[[NSMutableArray alloc]initWithArray:[[_coffeeMachineState getCurrentDrinks] getStringDrinks]];
    
    	

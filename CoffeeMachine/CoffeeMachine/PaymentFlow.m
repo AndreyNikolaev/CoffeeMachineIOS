@@ -99,7 +99,7 @@
     [self switchMenu];
 }
 
-- (void) switchMenu {  //BAD NAME
+- (void) switchMenu {  
     if( userCoins.sumOfCoins >= selectedDrink.price){
         int test = [userCoins sumOfCoins] - selectedDrink.price;
         Withdraw* withdraw = [[Withdraw alloc]init];
