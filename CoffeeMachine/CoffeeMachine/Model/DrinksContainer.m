@@ -61,6 +61,17 @@
     return stringOfDrinksArray;
 }
 
+-(NSMutableArray*)drinkNameAndQuantityToString
+{
+    NSMutableArray* drinkNameAndQuantity=[[NSMutableArray alloc]init];
+    
+    for (Drink *drink in [self.drinks allKeys]) {
+        [drinkNameAndQuantity addObject:[NSString stringWithFormat:@"%@ - amount: %d",drink.name,[self.drinks[drink]integerValue]]];
+    }
+    
+    return drinkNameAndQuantity;
+}
+
 -(void)setSomeDrinks // test function
 {
     Drink* drink1;

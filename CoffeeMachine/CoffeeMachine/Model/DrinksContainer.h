@@ -22,5 +22,5 @@
 -(NSMutableArray*)getStringDrinks;
 -(void)setSomeDrinks;
 -(DrinksContainer*)commit;
-
+-(NSMutableArray *)drinkNameAndQuantityToString;
 @end
