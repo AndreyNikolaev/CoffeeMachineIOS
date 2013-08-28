@@ -41,7 +41,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    [self.navigationItem setHidesBackButton:YES];
     [self updateCoffeeMachineState];
     // Do any additional setup after loading the view from its nib.
 }
@@ -67,7 +67,7 @@
 }
 
 - (IBAction)backToDrinkListFlow:(id)sender {
-   [self.navigationController popToRootViewControllerAnimated:YES];
+        [self.navigationController popToRootViewControllerAnimated:YES];
 
 }
 @end
