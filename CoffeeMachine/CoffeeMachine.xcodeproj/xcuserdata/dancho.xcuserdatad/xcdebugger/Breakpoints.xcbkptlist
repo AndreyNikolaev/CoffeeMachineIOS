@@ -118,5 +118,21 @@
          landmarkName = "-withdraw:"
          landmarkType = "5">
       </FileBreakpoint>
+<<<<<<< HEAD
+=======
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "CoffeeMachine/ViewController.m"
+         timestampString = "399316260.554819"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "153"
+         endingLineNumber = "153"
+         landmarkName = "-goToAdministrationFlow:"
+         landmarkType = "5">
+      </FileBreakpoint>
+>>>>>>> e2a48ec549ff4edc2aebc42d2904ce4728dc3f02
    </FileBreakpoints>
 </Bucket>
