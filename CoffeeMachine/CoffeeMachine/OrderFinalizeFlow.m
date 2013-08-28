@@ -41,7 +41,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.navigationItem setHidesBackButton:YES];
+    
     [self updateCoffeeMachineState];
     // Do any additional setup after loading the view from its nib.
 }

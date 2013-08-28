@@ -176,7 +176,15 @@ stringCoins=[stringCoins stringByAppendingString:[NSString stringWithFormat:@"%d
     
         
 }
-
+-(NSMutableArray *)coinsAmountToString {
+    NSMutableArray* coinsAmount=[[NSMutableArray alloc]init];
+    
+    for (Coin *coin in [self.coins allKeys]) {
+        [coinsAmount addObject:[NSString stringWithFormat:@"%d - amount: %d",coin.value,[self.coins[coin]integerValue]]];
+    }
+    
+    return coinsAmount;
+}
 
 /*-(NSUInteger*)hashCode
 {

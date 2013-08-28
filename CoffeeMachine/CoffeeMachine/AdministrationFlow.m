@@ -13,9 +13,12 @@
 @end
 @implementation AdministrationFlow
 
+
 @synthesize tableView;
-@synthesize moneyAmount;
+@synthesize moneyAmount = _moneyAmount;
 @synthesize drinksSold;
+
+
 
 - (void)viewDidLoad
 {
@@ -26,7 +29,7 @@
     MoneyAmount *mAmount = [[MoneyAmount alloc]init];
     [mAmount setSomeCoins];
 
-   // self.moneyAmount = [[NSMutableArray alloc]initWithArray:mAmount.description];
+   _moneyAmount = [[NSMutableArray alloc]initWithArray:mAmount.coinsAmountToString];
     self.drinksSold = [[NSMutableArray alloc]initWithArray:soldDrinks.drinkNameAndQuantityToString];
 }
 
@@ -37,18 +40,16 @@
         // Dispose of any resources that can be recreated.
 }
 
-//- (IBAction)switchBack:(id)sender {
-//    ViewController *vc = [[ViewController alloc]initWithNibName:@"ViewController"bundle:nil ];
-//    [[self navigationController ]setNavigationBarHidden:NO animated:YES];
-//    [self.navigationController pushViewController:vc animated:YES];
-//}
-
 
 - (NSInteger)numberOfSectionsInTableView :(UITableView *)tableView {
     return 2;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 3;
+    if(section == 0){
+        return drinksSold.count;
+    }else{
+        return _moneyAmount.count;
+    }
 }
 
 - (UITableViewCell *) tableView:(UITableView *) tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -56,15 +57,29 @@
     if(cell==nil){
         cell=[[UITableViewCell alloc]initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:@"cell" ];
     }
-    NSUInteger count = [self.drinksSold count];
-    for (NSUInteger i = 0; i < count; i++) {
-        if(indexPath.row==i){
+        if(indexPath.section == 0) {
+            NSUInteger count = [self.drinksSold count];
+            for (NSUInteger i = 0; i < count; i++) {
+                if(indexPath.row==i){
             
-            NSString *current = [self.drinksSold objectAtIndex: i];
-            cell.textLabel.text=current;
+                    NSString *current = [self.drinksSold objectAtIndex: i];
+                    cell.textLabel.text=current;
+                }
+            }return cell;
+        }else{
+            NSUInteger count = [_moneyAmount count];
+            for (NSUInteger i = 0; i < count; i++) {
+                if(indexPath.row==i){
+                    
+                    NSString *current = [_moneyAmount objectAtIndex: i];
+                    cell.textLabel.text=current;
+                }
+
+        }return cell;
+
         }
-    }return cell;
 }
+
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {

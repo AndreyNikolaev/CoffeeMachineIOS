@@ -273,20 +273,17 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">AdministrationFlow</string>
 					<string key="superclassName">UIViewController</string>
-					<dictionary class="NSMutableDictionary" key="outlets">
-						<string key="navigationBar">UINavigationItem</string>
-						<string key="tableView">UITableView</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<object class="IBToOneOutletInfo" key="navigationBar">
-							<string key="name">navigationBar</string>
-							<string key="candidateClassName">UINavigationItem</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="tableView">
+					<object class="NSMutableDictionary" key="outlets">
+						<string key="NS.key.0">tableView</string>
+						<string key="NS.object.0">UITableView</string>
+					</object>
+					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<string key="NS.key.0">tableView</string>
+						<object class="IBToOneOutletInfo" key="NS.object.0">
 							<string key="name">tableView</string>
 							<string key="candidateClassName">UITableView</string>
 						</object>
-					</dictionary>
+					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">./Classes/AdministrationFlow.h</string>

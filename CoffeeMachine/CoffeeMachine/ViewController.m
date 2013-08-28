@@ -30,7 +30,7 @@
 #pragma mark -
 
 - (void)viewDidLoad
-{   [self.navigationItem setHidesBackButton:YES];
+{
     [super viewDidLoad];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
