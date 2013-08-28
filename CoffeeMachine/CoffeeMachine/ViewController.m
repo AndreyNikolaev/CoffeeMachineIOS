@@ -117,19 +117,29 @@
     
     
 }
+
 - (void) alertView:(UIAlertView *)alert clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    //NSLog(@"Login: %@", [[alert textFieldAtIndex:0] text]);
-    //NSLog(@"Password: %@", [[alert textFieldAtIndex:1] text]);
     NSString *username = @"test";
     NSString *password = @"pass";
     if(buttonIndex == 1) {
-    if([[[alert textFieldAtIndex:0]text ]isEqual:username] && [[[alert textFieldAtIndex:1]text ]isEqual:password]) {
-        AdministrationFlow *admin = [[AdministrationFlow alloc]initWithNibName:@"AdministrationFlow" bundle:nil];
-        [self.navigationController pushViewController:admin animated:YES];
+        NSString *e_uname = [[alert textFieldAtIndex:0]text ];
+        NSString *e_pass = [[alert textFieldAtIndex:1]text ];
+
+        if([e_uname isEqual:username] && [e_pass isEqual:password]) {
+            AdministrationFlow *admin = [[AdministrationFlow alloc]initWithNibName:@"AdministrationFlow" bundle:nil];
+            [self.navigationController pushViewController:admin animated:YES];
+            NSLog(@"%@\n%@", e_uname, e_pass);
+            
+        }else{
+            UIAlertView *wrongPassword = [[UIAlertView alloc] initWithTitle:@"Wrong Password" message:@"Try again"
+                                                                   delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [wrongPassword show];
+            //[self performSelector:@selector(goToAdministrationFlow:) withObject:nil afterDelay:0.01];
+           
+        }
     }else {
-        [_alertView show];
-    }
+        NSLog(@"test");
     }
     
 }
@@ -139,9 +149,9 @@
  
 
 -(IBAction)goToAdministrationFlow:(id)sender {
-    UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"Login"message:nil delegate:self cancelButtonTitle: @"cancel"otherButtonTitles:@"Ok", nil];
+    UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"Login"message:nil delegate:self cancelButtonTitle: @"Cancel"otherButtonTitles:@"Ok", nil];
     alertView.alertViewStyle = UIAlertViewStyleLoginAndPasswordInput;
-    [self alertView:alertView clickedButtonAtIndex:0];
+    //[self alertView:alertView clickedButtonAtIndex:0];
     [alertView show];
 }
 
