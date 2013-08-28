@@ -12,4 +12,6 @@
 @property (strong, nonatomic) IBOutlet UINavigationItem *navigationBar;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
+@property(strong) NSMutableArray *drinksSold;
+@property(strong) NSMutableArray *moneyAmount;
 @end
