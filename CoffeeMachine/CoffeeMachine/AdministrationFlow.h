@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface AdministrationFlow : UIViewController <UITableViewDataSource, UITableViewDelegate>
-@property (strong, nonatomic) IBOutlet UINavigationItem *navigationBar;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 @property(strong) NSMutableArray *drinksSold;

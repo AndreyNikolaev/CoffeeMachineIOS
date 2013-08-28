@@ -131,7 +131,7 @@
         NSString *e_pass = [[alert textFieldAtIndex:0]text ];
 
         if([e_pass isEqual:password]) {
-            AdministrationFlow *admin = [[AdministrationFlow alloc]initWithNibName:@"AdministrationFlow" bundle:nil];
+            AdministrationFlow *admin = [[AdministrationFlow alloc]init];
             [self.navigationController pushViewController:admin animated:YES];
             NSLog(@"%@", e_pass);
             
