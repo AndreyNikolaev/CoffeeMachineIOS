@@ -258,8 +258,8 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "156"
          endingLineNumber = "156"
-         landmarkName = "-goToAdministrationFlow:"
-         landmarkType = "5">
+         landmarkName = "@implementation ViewController"
+         landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -284,8 +284,8 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "32"
          endingLineNumber = "32"
-         landmarkName = "-viewDidLoad"
-         landmarkType = "5">
+         landmarkName = "@implementation AdministrationFlow"
+         landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"

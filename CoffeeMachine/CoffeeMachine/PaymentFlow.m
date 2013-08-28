@@ -49,6 +49,7 @@
     [super viewDidLoad];
     sum = 0;
     userCoins=[[MoneyAmount alloc]init];
+
     // Do any additional setup after loading the view from its nib.
    
 }
