@@ -32,7 +32,7 @@
 {
     [super viewDidLoad];
     self.title=@"Administrator report";
-    self.navigationBar.backBarButtonItem.title=@"Coffee Machine";
+//    self.navigationBar.backBarButtonItem.title=@"Coffee Machine";
     self.tableView.tableHeaderView=[[UIView alloc]init];
     // Do any additional setup after loading the view from its nib.
     
@@ -51,11 +51,12 @@
         [super didReceiveMemoryWarning];
         // Dispose of any resources that can be recreated.
     }
-- (IBAction)switchBack:(id)sender {
-    ViewController *vc = [[ViewController alloc]initWithNibName:@"ViewController"bundle:nil ];
-    [[self navigationController ]setNavigationBarHidden:NO animated:YES];
-    [self.navigationController pushViewController:vc animated:YES];
-}
+
+//- (IBAction)switchBack:(id)sender {
+//    ViewController *vc = [[ViewController alloc]initWithNibName:@"ViewController"bundle:nil ];
+//    [[self navigationController ]setNavigationBarHidden:NO animated:YES];
+//    [self.navigationController pushViewController:vc animated:YES];
+//}
 
 
 - (NSInteger)numberOfSectionsInTableView :(UITableView *)tableView {
