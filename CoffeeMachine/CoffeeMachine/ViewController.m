@@ -79,7 +79,11 @@
             
             NSString *current = [_itemsArray objectAtIndex: i];
             cell.textLabel.text=current;
-        }
+            
+            UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
+            imgView.image = [UIImage imageNamed:@"coffee.jpg"];
+            cell.imageView.image = imgView.image;
+          }
     }
 
 

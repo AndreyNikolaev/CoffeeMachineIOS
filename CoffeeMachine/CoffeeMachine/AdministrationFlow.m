@@ -14,11 +14,7 @@
 @implementation AdministrationFlow
 
 @synthesize navigationBar;
-@synthesize tableView=_tableView;
-@synthesize sectionsArray;
-@synthesize rowsArray;
-@synthesize coffeeMachineState;
-
+@synthesize tableView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -33,11 +29,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
     self.title=@"Administrator report";
     self.navigationBar.backBarButtonItem.title=@"Coffee Machine";
-    rowsArray=[[NSMutableArray alloc]initWithArray:[coffeeMachineState.currentDrinksAmount.drinks allKeys]];
-    [[self tableView]reloadData];
+    self.tableView.tableHeaderView=[[UIView alloc]init];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -51,25 +45,5 @@
     ViewController *vc = [[ViewController alloc]initWithNibName:@"ViewController"bundle:nil ];
     [[self navigationController ]setNavigationBarHidden:NO animated:YES];
     [self.navigationController pushViewController:vc animated:YES];
-}
-
-- (UITableViewCell *) tableView:(UITableView *) tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:@"cell"];
-    if(cell==nil){
-        cell=[[UITableViewCell alloc]initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:@"cell" ];
-    }
-    
-    NSUInteger count = [rowsArray count];
-    for (NSUInteger i = 0; i < count; i++) {
-        if(indexPath.row==i){
-            
-            NSString *current = [rowsArray objectAtIndex: i];
-            cell.textLabel.text=current;
-        }
-    }
-    
-    
-    
-    return cell;
-}
+}	
 @end
