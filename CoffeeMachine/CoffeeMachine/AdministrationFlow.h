@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+@class CoffeeMachineState;
 
 @interface AdministrationFlow : UIViewController
 @property (strong, nonatomic) IBOutlet UINavigationItem *navigationBar;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
-
+@property(strong, nonatomic) NSMutableArray *sectionsArray;
+@property NSMutableArray *rowsArray;
+@property CoffeeMachineState *coffeeMachineState;
 @end
