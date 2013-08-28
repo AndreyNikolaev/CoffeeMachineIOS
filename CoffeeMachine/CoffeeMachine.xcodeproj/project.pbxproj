@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3C75960A17C4D42C0013211A /* CoffeeMachine-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5ADBFE3C17B11A77005B7B91 /* CoffeeMachine-Info.plist */; };
-		5A9C66EC17CDEE090025F1BD /* coffee.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5A9C66EB17CDEE090025F1BD /* coffee.jpg */; };
 		5AD129DF17B23A7700094D01 /* Coin.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD129DE17B23A7700094D01 /* Coin.m */; };
 		5AD129E217B23AAE00094D01 /* Drink.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD129E117B23AAE00094D01 /* Drink.m */; };
 		5AD129E817B23B0B00094D01 /* DrinksContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD129E717B23B0B00094D01 /* DrinksContainer.m */; };
@@ -21,11 +20,7 @@
 		5AD3361C17C4A66B001F65DE /* OrderFinalizeFlow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AD3361A17C4A669001F65DE /* OrderFinalizeFlow.xib */; };
 		5AD7997F17CCC1A8007E5EB7 /* AdministrationFlow.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD7997D17CCC1A8007E5EB7 /* AdministrationFlow.m */; };
 		5AD7998017CCC1A8007E5EB7 /* AdministrationFlow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AD7997E17CCC1A8007E5EB7 /* AdministrationFlow.xib */; };
-<<<<<<< HEAD
-		5AD7998917CDF460007E5EB7 /* coins.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5AD7998717CDF460007E5EB7 /* coins.jpg */; };
-		5AD7998A17CDF460007E5EB7 /* coffee.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5AD7998817CDF460007E5EB7 /* coffee.jpg */; };
-=======
->>>>>>> d97d980618ca7f25aa7c697eebc62d597db782b4
+		5AD7998C17CE120E007E5EB7 /* coffee.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5AD7998B17CE120E007E5EB7 /* coffee.jpg */; };
 		5ADBFE3517B11A77005B7B91 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ADBFE3417B11A77005B7B91 /* UIKit.framework */; };
 		5ADBFE3717B11A77005B7B91 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ADBFE3617B11A77005B7B91 /* Foundation.framework */; };
 		5ADBFE3917B11A77005B7B91 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ADBFE3817B11A77005B7B91 /* CoreGraphics.framework */; };
@@ -42,7 +37,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5A9C66EB17CDEE090025F1BD /* coffee.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = coffee.jpg; path = ../../../coffee.jpg; sourceTree = "<group>"; };
 		5AD129DD17B23A7700094D01 /* Coin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Coin.h; sourceTree = "<group>"; };
 		5AD129DE17B23A7700094D01 /* Coin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Coin.m; sourceTree = "<group>"; };
 		5AD129E017B23AAE00094D01 /* Drink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Drink.h; sourceTree = "<group>"; };
@@ -64,11 +58,7 @@
 		5AD7997C17CCC1A8007E5EB7 /* AdministrationFlow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdministrationFlow.h; sourceTree = "<group>"; };
 		5AD7997D17CCC1A8007E5EB7 /* AdministrationFlow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdministrationFlow.m; sourceTree = "<group>"; };
 		5AD7997E17CCC1A8007E5EB7 /* AdministrationFlow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdministrationFlow.xib; sourceTree = "<group>"; };
-<<<<<<< HEAD
-		5AD7998717CDF460007E5EB7 /* coins.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = coins.jpg; sourceTree = "<group>"; };
-		5AD7998817CDF460007E5EB7 /* coffee.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = coffee.jpg; sourceTree = "<group>"; };
-=======
->>>>>>> d97d980618ca7f25aa7c697eebc62d597db782b4
+		5AD7998B17CE120E007E5EB7 /* coffee.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = coffee.jpg; sourceTree = "<group>"; };
 		5ADBFE3117B11A77005B7B91 /* CoffeeMachine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoffeeMachine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ADBFE3417B11A77005B7B91 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5ADBFE3617B11A77005B7B91 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -180,12 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				5ADBFE3C17B11A77005B7B91 /* CoffeeMachine-Info.plist */,
-<<<<<<< HEAD
-				5AD7998717CDF460007E5EB7 /* coins.jpg */,
-				5AD7998817CDF460007E5EB7 /* coffee.jpg */,
-=======
-				5A9C66EB17CDEE090025F1BD /* coffee.jpg */,
->>>>>>> d97d980618ca7f25aa7c697eebc62d597db782b4
+				5AD7998B17CE120E007E5EB7 /* coffee.jpg */,
 				5ADBFE3D17B11A77005B7B91 /* InfoPlist.strings */,
 				5ADBFE4017B11A77005B7B91 /* main.m */,
 				5ADBFE4217B11A77005B7B91 /* CoffeeMachine-Prefix.pch */,
@@ -257,12 +242,7 @@
 				5AD3361C17C4A66B001F65DE /* OrderFinalizeFlow.xib in Resources */,
 				3C75960A17C4D42C0013211A /* CoffeeMachine-Info.plist in Resources */,
 				5AD7998017CCC1A8007E5EB7 /* AdministrationFlow.xib in Resources */,
-<<<<<<< HEAD
-				5AD7998917CDF460007E5EB7 /* coins.jpg in Resources */,
-				5AD7998A17CDF460007E5EB7 /* coffee.jpg in Resources */,
-=======
-				5A9C66EC17CDEE090025F1BD /* coffee.jpg in Resources */,
->>>>>>> d97d980618ca7f25aa7c697eebc62d597db782b4
+				5AD7998C17CE120E007E5EB7 /* coffee.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

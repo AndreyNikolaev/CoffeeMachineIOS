@@ -32,10 +32,6 @@
 {
     [super viewDidLoad];
     self.title=@"Administrator report";
-//    self.navigationBar.backBarButtonItem.title=@"Coffee Machine";
-    self.tableView.tableHeaderView=[[UIView alloc]init];
-    // Do any additional setup after loading the view from its nib.
-    
     DrinksContainer *soldDrinks =[[ DrinksContainer alloc]init ];
     [soldDrinks setSomeDrinks];
     MoneyAmount *mAmount = [[MoneyAmount alloc]init];
@@ -47,10 +43,10 @@
 
 
 - (void)didReceiveMemoryWarning
-    {
+{
         [super didReceiveMemoryWarning];
         // Dispose of any resources that can be recreated.
-    }
+}
 
 //- (IBAction)switchBack:(id)sender {
 //    ViewController *vc = [[ViewController alloc]initWithNibName:@"ViewController"bundle:nil ];
