@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>Capuchino</key>
+		<integer>60</integer>
+		<key>Coffee</key>
+		<integer>30</integer>
+		<key>Hot Choco</key>
+		<integer>50</integer>
+		<key>Long Coffee</key>
+		<integer>40</integer>
+		<key>Ness Coffee</key>
+		<integer>30</integer>
+	</dict>
+	<dict>
+		<key>Capuchino</key>
+		<integer>100</integer>
+		<key>Coffee</key>
+		<integer>100</integer>
+		<key>Hot Choco</key>
+		<integer>100</integer>
+		<key>Long Coffee</key>
+		<integer>100</integer>
+		<key>Ness Coffee</key>
+		<integer>100</integer>
+	</dict>
+	<dict>
+		<key>10</key>
+		<integer>100</integer>
+		<key>100</key>
+		<integer>100</integer>
+		<key>20</key>
+		<integer>100</integer>
+		<key>5</key>
+		<integer>100</integer>
+		<key>50</key>
+		<integer>100</integer>
+	</dict>
+</array>
+</plist>
